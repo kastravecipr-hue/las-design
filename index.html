@@ -3,133 +3,241 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>LAS Design | Restaurant Websites, Systems & Support</title>
-  <meta name="description" content="LAS Design creates restaurant websites, advanced live booking systems, local SEO, gift vouchers, menu and print design, and practical IT support.">
-  <link rel="icon" type="image/png" href="LASLogo.png">
-  <meta name="theme-color" content="#0b0b0b">
-
+  <meta name="description" content="LOS builds restaurant websites, advanced booking platforms, SEO, gift voucher systems, menus, print design and practical digital support across Manchester and Northern England.">
+  <meta name="theme-color" content="#0a0a0a">
+  <title>LOS | Websites, Booking Platforms & Digital Support</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    :root{--black:#0b0b0b;--charcoal:#282828;--grey:#6f6f6f;--light:#dedede;--off:#f4f4f1;--white:#fff}
+    :root{--black:#080808;--ink:#171717;--grey:#6e6e6e;--line:#d9d9d4;--soft:#f2f2ee;--white:#fff;--green:#c8ff42}
     html{scroll-behavior:smooth}
-    body{background:var(--white);color:var(--black);font-family:Arial,Helvetica,sans-serif;line-height:1.5;overflow-x:hidden}
+    body{font-family:Arial,Helvetica,sans-serif;background:var(--white);color:var(--black);line-height:1.5;overflow-x:hidden}
     body.menu-open{overflow:hidden}
-    img{display:block;width:100%}
     a{color:inherit;text-decoration:none}
     button,input,select,textarea{font:inherit}
-    .container{width:min(1240px,90%);margin:auto}
-    .label{display:flex;align-items:center;gap:16px;margin-bottom:28px;font-size:11px;font-weight:800;letter-spacing:3px;text-transform:uppercase}
-    .label:before{content:"";width:45px;height:1px;background:currentColor}
-    .section-heading{max-width:850px;margin-bottom:42px;font-size:clamp(44px,5vw,70px);font-weight:900;letter-spacing:-5px;line-height:.95}
-    .button{display:inline-flex;align-items:center;justify-content:center;gap:24px;min-height:58px;padding:0 28px;border:1px solid var(--black);background:var(--black);color:var(--white);font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;cursor:pointer;transition:.25s}
-    .button:hover{background:transparent;color:var(--black);transform:translateY(-3px)}
-    .button-light{border-color:var(--white);background:var(--white);color:var(--black)}
-    .button-light:hover{background:transparent;color:var(--white)}
+    button{cursor:pointer}
+    .container{width:min(1180px,90%);margin:auto}
+    .eyebrow{display:flex;align-items:center;gap:13px;font-size:11px;font-weight:800;letter-spacing:2.4px;text-transform:uppercase}
+    .eyebrow:before{content:"";width:34px;height:1px;background:currentColor}
+    .btn{display:inline-flex;align-items:center;justify-content:center;gap:22px;min-height:55px;padding:0 25px;border:1px solid var(--black);background:var(--black);color:white;font-size:11px;font-weight:800;letter-spacing:1.8px;text-transform:uppercase;transition:.25s}
+    .btn:hover{background:transparent;color:var(--black);transform:translateY(-2px)}
+    .btn.light{background:white;color:var(--black);border-color:white}
+    .btn.light:hover{background:transparent;color:white}
+    .btn.accent{background:var(--green);color:var(--black);border-color:var(--green)}
+    .btn.accent:hover{background:white;border-color:white}
 
-    header{position:sticky;top:0;z-index:1000;border-bottom:1px solid var(--light);background:rgba(255,255,255,.96);backdrop-filter:blur(14px)}
-    nav{min-height:88px;display:flex;align-items:center;justify-content:space-between;gap:30px}
-    .brand{display:flex;align-items:center;gap:16px}.logo-image{width:62px;height:62px;object-fit:contain}.brand-name{font-size:13px;font-weight:800;letter-spacing:5px;white-space:nowrap}
-    .nav-links{display:flex;align-items:center;gap:34px;list-style:none}.nav-links a{position:relative;font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase}.nav-button{padding:13px 20px;border:1px solid var(--black)}.nav-button:hover{background:var(--black);color:var(--white)}
-    .menu-button{display:none;padding:8px;border:0;background:transparent;cursor:pointer}.menu-button span{display:block;width:28px;height:2px;margin:6px 0;background:var(--black)}
+    header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,.09)}
+    nav{height:76px;display:flex;align-items:center;justify-content:space-between}
+    .brand{display:flex;align-items:center;gap:13px;font-weight:900;letter-spacing:-1px}
+    .brand-mark{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--black);color:white;font-size:16px;letter-spacing:-1px}
+    .brand-name{font-size:12px;letter-spacing:2px;text-transform:uppercase}
+    .navlinks{display:flex;align-items:center;gap:30px;list-style:none;font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}
+    .navlinks a:hover{opacity:.5}
+    .menu-btn{display:none;border:0;background:none;width:42px;height:42px;position:relative}
+    .menu-btn span,.menu-btn:before,.menu-btn:after{content:"";position:absolute;left:8px;width:26px;height:2px;background:#000;transition:.25s}
+    .menu-btn:before{top:13px}.menu-btn span{top:20px}.menu-btn:after{top:27px}
 
-    .hero{padding:60px 0 78px;overflow:hidden}.hero-grid{display:grid;grid-template-columns:1.08fr .92fr;align-items:center;gap:52px}.hero h1{max-width:790px;font-size:clamp(70px,8vw,126px);font-weight:900;letter-spacing:-7px;line-height:.87}.hero h1 span{color:#a2a2a2}.hero-copy{max-width:600px;margin:38px 0;color:#545454;font-size:20px;line-height:1.65}.hero-points{display:flex;flex-wrap:wrap;gap:12px;margin-bottom:38px}.hero-points span{padding:9px 13px;border:1px solid #d3d3d3;font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}
-    .hero-visual{position:relative;min-height:570px}.hero-image{width:88%;height:520px;margin-left:auto;object-fit:cover;filter:grayscale(100%)}.hero-card{position:absolute;bottom:0;left:0;width:275px;padding:28px;background:var(--black);color:var(--white)}.hero-card strong{display:block;margin-bottom:12px;font-size:22px;letter-spacing:-1px}.hero-card span{color:#aaa;font-size:12px;letter-spacing:1px;line-height:1.7;text-transform:uppercase}
+    .hero{background:var(--black);color:white;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 30%,rgba(200,255,66,.14),transparent 32%),linear-gradient(115deg,transparent 55%,rgba(255,255,255,.04) 55%);pointer-events:none}
+    .hero-inner{position:relative;min-height:660px;padding:88px 0 67px;display:grid;grid-template-columns:1.35fr .65fr;gap:60px;align-items:end}
+    .hero h1{font-size:clamp(58px,8.7vw,126px);line-height:.84;letter-spacing:-7px;text-transform:uppercase;max-width:940px;margin:24px 0 31px}
+    .hero h1 span{color:var(--green)}
+    .hero-copy{max-width:625px;font-size:18px;color:#c6c6c6;margin-bottom:31px}
+    .hero-actions{display:flex;align-items:center;gap:23px;flex-wrap:wrap}
+    .hero-note{font-size:10px;letter-spacing:1.7px;text-transform:uppercase;color:#999}
+    .hero-panel{border:1px solid #333;padding:28px;background:rgba(255,255,255,.025)}
+    .panel-number{font-size:68px;line-height:1;font-weight:900;letter-spacing:-4px;color:var(--green)}
+    .hero-panel h2{font-size:22px;margin:17px 0 8px}
+    .hero-panel p{font-size:14px;color:#aaa}
+    .hero-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px}
+    .hero-tags span{border:1px solid #333;padding:8px 10px;font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
 
-    .strip{border-top:1px solid var(--light);border-bottom:1px solid var(--light)}.strip-inner{min-height:72px;display:grid;grid-template-columns:repeat(4,1fr)}.strip-item{display:flex;align-items:center;justify-content:center;padding:18px;border-right:1px solid var(--light);font-size:10px;font-weight:800;letter-spacing:2px;text-align:center;text-transform:uppercase}.strip-item:last-child{border-right:0}
+    .capabilities{background:var(--green);border-bottom:1px solid #000}
+    .cap-grid{display:grid;grid-template-columns:repeat(4,1fr)}
+    .cap{padding:19px;border-right:1px solid rgba(0,0,0,.25);text-align:center;font-size:10px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase}
+    .cap:last-child{border-right:0}
 
-    .services{padding:76px 0 84px}.services-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--black)}.service{position:relative;min-height:315px;padding:30px;border-right:1px solid var(--light);border-bottom:1px solid var(--light);overflow:hidden;transition:.25s}.service:nth-child(3n){border-right:0}.service-icon{width:76px;height:76px;margin-bottom:28px;border:1px solid #cfcfcf;border-radius:50%;display:grid;place-items:center}.service-icon svg{width:37px;height:37px;fill:none;stroke:currentColor;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}.service-number{position:absolute;top:32px;right:30px;color:#999;font-size:11px;letter-spacing:2px}.service h3{margin-bottom:14px;font-size:clamp(24px,2.4vw,34px);font-weight:750;letter-spacing:-1.7px}.service p{color:#666;font-size:14px;line-height:1.6}.service-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:18px}.service-tags span{padding:6px 8px;border:1px solid #d5d5d5;font-size:8px;font-weight:800;letter-spacing:1px;text-transform:uppercase}.service:hover{background:var(--black);color:var(--white)}.service:hover p,.service:hover .service-number{color:#aaa}.service:hover .service-icon,.service:hover .service-tags span{border-color:#555}
+    section{padding:92px 0}
+    .section-top{display:flex;align-items:end;justify-content:space-between;gap:40px;margin-bottom:48px}
+    .section-top h2{font-size:clamp(40px,6vw,78px);line-height:.95;letter-spacing:-4px;max-width:770px;margin-top:17px}
+    .section-intro{max-width:370px;color:var(--grey);font-size:15px}
 
-    .booking-focus{padding:84px 0;background:var(--black);color:var(--white)}.booking-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:65px;align-items:center}.booking-focus h2{font-size:clamp(52px,6vw,90px);font-weight:900;letter-spacing:-5px;line-height:.92}.booking-focus h2 span{color:#777}.booking-copy{color:#bbb;font-size:18px;line-height:1.75}.feature-list{display:grid;grid-template-columns:1fr 1fr;margin-top:25px;border-top:1px solid #444}.feature-list div{padding:14px 10px;border-bottom:1px solid #444;font-size:10px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}
+    .services{background:var(--soft)}
+    .service-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+    .service{background:white;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:31px;min-height:310px;display:flex;flex-direction:column;transition:.25s}
+    .service:hover{background:var(--black);color:white;transform:translateY(-4px)}
+    .service:hover p{color:#aaa}.service:hover .icon{border-color:#555}.service:hover .icon svg{stroke:var(--green)}
+    .service-head{display:flex;align-items:start;justify-content:space-between;margin-bottom:35px}
+    .service-no{font-size:10px;font-weight:900;letter-spacing:1.5px;color:var(--grey)}
+    .icon{width:58px;height:58px;border:1px solid var(--line);display:grid;place-items:center}
+    .icon svg{width:28px;height:28px;fill:none;stroke:#111;stroke-width:1.5}
+    .service h3{font-size:23px;letter-spacing:-.7px;margin-bottom:11px}
+    .service p{font-size:14px;color:var(--grey);margin-bottom:22px}
+    .mini-tags{margin-top:auto;display:flex;gap:6px;flex-wrap:wrap}
+    .mini-tags span{font-size:9px;font-weight:800;letter-spacing:.8px;text-transform:uppercase;border:1px solid currentColor;padding:6px 8px;opacity:.75}
 
-    .why{padding:82px 0;background:var(--off)}.why-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px}.why h2{font-size:clamp(52px,6vw,88px);font-weight:900;letter-spacing:-5px;line-height:.94}.why-list{border-top:1px solid #bbb}.why-item{display:grid;grid-template-columns:40px 1fr;gap:18px;padding:21px 0;border-bottom:1px solid #ccc}.why-item span{color:#888;font-size:11px}.why-item strong{display:block;margin-bottom:6px;font-size:24px;letter-spacing:-1px}.why-item p{color:#666;font-size:14px}
+    .booking{background:var(--black);color:white}
+    .booking-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:70px;align-items:start}
+    .booking h2{font-size:clamp(45px,6vw,82px);line-height:.92;letter-spacing:-4px;margin:18px 0 25px}
+    .booking-copy{color:#aaa;max-width:500px;margin-bottom:28px}
+    .feature-grid{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid #333;border-left:1px solid #333}
+    .feature{padding:22px;border-right:1px solid #333;border-bottom:1px solid #333;min-height:112px}
+    .feature strong{display:block;font-size:13px;margin-bottom:7px}
+    .feature small{display:block;color:#888;font-size:12px}
+    .feature .tick{color:var(--green);font-weight:900;margin-bottom:11px}
 
-    .contact{padding:84px 0}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}.contact h2{font-size:clamp(52px,6vw,88px);font-weight:900;letter-spacing:-5px;line-height:.94}.contact-intro{max-width:470px;margin-top:28px;color:#666;font-size:17px;line-height:1.7}.contact-email{display:inline-block;margin-top:28px;border-bottom:1px solid var(--black);font-weight:800}
-    .form-grid{display:grid;grid-template-columns:1fr 1fr;gap:22px}.field{display:flex;flex-direction:column;gap:9px}.field.full{grid-column:1/-1}.field label{font-size:10px;font-weight:800;letter-spacing:1.5px;text-transform:uppercase}.field input,.field select,.field textarea{width:100%;padding:17px 0;border:0;border-bottom:1px solid #aaa;border-radius:0;background:transparent;color:var(--black);outline:none}.field input:focus,.field select:focus,.field textarea:focus{border-bottom-color:var(--black)}.field textarea{min-height:130px;resize:vertical}.form-note{grid-column:1/-1;color:#777;font-size:12px;line-height:1.6}.form-status{grid-column:1/-1;min-height:22px;font-size:13px;font-weight:700}.submit-row{grid-column:1/-1;display:flex;align-items:center;justify-content:space-between;gap:20px;margin-top:10px}
+    .why-grid{display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center}
+    .why h2{font-size:clamp(46px,6vw,82px);line-height:.92;letter-spacing:-4px;margin:18px 0 23px}
+    .why-copy{color:var(--grey);max-width:520px}
+    .proof{border-top:1px solid var(--line)}
+    .proof-row{display:grid;grid-template-columns:52px 1fr;gap:17px;padding:21px 0;border-bottom:1px solid var(--line)}
+    .proof-no{font-size:10px;font-weight:900;color:var(--grey);padding-top:5px}
+    .proof h3{font-size:19px;margin-bottom:4px}.proof p{font-size:13px;color:var(--grey)}
 
-    footer{padding:55px 0;background:var(--black);color:var(--white)}.footer-inner{display:grid;grid-template-columns:1fr auto auto;align-items:center;gap:50px}.footer-brand{display:flex;align-items:center;gap:16px}.footer-logo{width:55px;height:55px;padding:3px;border-radius:50%;background:var(--white);object-fit:contain}.footer-brand strong{font-size:12px;letter-spacing:4px}.footer-text{color:#888;font-size:10px;letter-spacing:2px;text-transform:uppercase}
-    .reveal{opacity:0;transform:translateY(30px);transition:opacity .75s ease,transform .75s ease}.reveal.visible{opacity:1;transform:none}
+    .process{background:var(--soft)}
+    .steps{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+    .step{background:white;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:28px;min-height:190px}
+    .step span{font-size:10px;font-weight:900;color:var(--grey)}
+    .step h3{font-size:22px;margin:34px 0 8px}.step p{font-size:13px;color:var(--grey)}
 
-    @media(max-width:1000px){.hero-grid,.booking-grid,.why-grid,.contact-grid{grid-template-columns:1fr}.services-grid{grid-template-columns:repeat(2,1fr)}.service:nth-child(3n){border-right:1px solid var(--light)}.service:nth-child(even){border-right:0}.contact-grid,.why-grid{gap:60px}}
-    @media(max-width:760px){nav{min-height:76px}.logo-image{width:49px;height:49px}.brand-name{font-size:11px;letter-spacing:3px}.menu-button{display:block}.nav-links{position:absolute;top:76px;left:0;right:0;display:none;flex-direction:column;align-items:flex-start;gap:0;padding:25px 5%;border-bottom:1px solid var(--light);background:var(--white)}.nav-links.open{display:flex}.nav-links li,.nav-links a{width:100%}.nav-links a{display:block;padding:18px 0;border-bottom:1px solid var(--light)}.nav-button{text-align:center;margin-top:12px}.hero{padding:48px 0 65px}.hero-grid{gap:42px}.hero h1{font-size:clamp(60px,19vw,92px);letter-spacing:-5px}.hero-copy{font-size:17px}.hero-visual{min-height:430px}.hero-image{width:92%;height:400px}.hero-card{width:235px;padding:23px}.strip-inner{grid-template-columns:1fr 1fr}.strip-item:nth-child(2){border-right:0}.strip-item:nth-child(-n+2){border-bottom:1px solid var(--light)}.services,.booking-focus,.why,.contact{padding:65px 0}.section-heading{font-size:46px;letter-spacing:-3px;margin-bottom:34px}.services-grid{grid-template-columns:1fr}.service,.service:nth-child(3n){min-height:auto;padding:26px 22px;border-right:0}.service-icon{margin-bottom:22px}.booking-focus h2,.why h2,.contact h2{letter-spacing:-3px}.feature-list{grid-template-columns:1fr}.form-grid{grid-template-columns:1fr}.field.full,.form-note,.form-status,.submit-row{grid-column:1}.submit-row{align-items:flex-start;flex-direction:column}.footer-inner{grid-template-columns:1fr;gap:25px}}
-    @media(max-width:420px){.brand-name{display:none}.button{width:100%}.hero h1{font-size:60px}}
+    .contact{background:var(--black);color:white}
+    .contact-grid{display:grid;grid-template-columns:.82fr 1.18fr;gap:70px}
+    .contact h2{font-size:clamp(48px,6vw,82px);line-height:.92;letter-spacing:-4px;margin:18px 0 22px}
+    .contact-copy{color:#aaa;margin-bottom:27px;max-width:440px}
+    .direct{font-size:13px;color:var(--green);word-break:break-all}
+    form{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+    .field{display:flex;flex-direction:column;gap:8px}.field.full{grid-column:1/-1}
+    label{font-size:9px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase;color:#aaa}
+    input,select,textarea{width:100%;border:1px solid #3b3b3b;background:#141414;color:white;padding:15px;outline:none;border-radius:0}
+    input:focus,select:focus,textarea:focus{border-color:var(--green)}
+    textarea{min-height:126px;resize:vertical}
+    option{background:#111}
+    .form-note{grid-column:1/-1;color:#777;font-size:11px}
+    .form-message{grid-column:1/-1;color:var(--green);font-size:12px;min-height:18px}
+    footer{background:#000;color:#777;border-top:1px solid #222;padding:26px 0}
+    .footer-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;font-size:10px;letter-spacing:1px;text-transform:uppercase}
+
+    .reveal{opacity:0;transform:translateY(22px);transition:opacity .65s ease,transform .65s ease}.reveal.visible{opacity:1;transform:none}
+    @media(max-width:900px){
+      .navlinks{position:fixed;inset:76px 0 auto 0;background:white;display:none;flex-direction:column;align-items:flex-start;padding:34px 5%;border-bottom:1px solid var(--line)}
+      .navlinks.open{display:flex}.menu-btn{display:block}
+      .hero-inner{grid-template-columns:1fr;min-height:auto;padding:72px 0 56px;gap:45px}.hero h1{letter-spacing:-4px}.hero-panel{max-width:500px}
+      .service-grid{grid-template-columns:1fr 1fr}.booking-grid,.why-grid,.contact-grid{grid-template-columns:1fr;gap:48px}.steps{grid-template-columns:1fr 1fr}
+    }
+    @media(max-width:620px){
+      nav{height:68px}.brand-mark{width:42px;height:42px}.brand-name{display:none}.navlinks{inset:68px 0 auto}
+      .hero-inner{padding-top:55px}.hero h1{font-size:56px;letter-spacing:-3.5px}.hero-copy{font-size:16px}.hero-note{width:100%}
+      .cap-grid{grid-template-columns:1fr 1fr}.cap:nth-child(2){border-right:0}.cap:nth-child(-n+2){border-bottom:1px solid rgba(0,0,0,.25)}
+      section{padding:67px 0}.section-top{display:block;margin-bottom:33px}.section-intro{margin-top:19px}.section-top h2,.booking h2,.why h2,.contact h2{letter-spacing:-2.6px}
+      .service-grid,.feature-grid,.steps{grid-template-columns:1fr}.service{min-height:270px}.why-grid{gap:38px}
+      form{grid-template-columns:1fr}.field{grid-column:1/-1}.footer-inner{align-items:flex-start;flex-direction:column}
+    }
+    @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.service,.btn{transition:none}}
   </style>
 </head>
 <body>
 <header>
-  <div class="container"><nav>
-    <a href="#top" class="brand" aria-label="LAS Design homepage"><img src="LASLogo.png" alt="LAS Design logo" class="logo-image"><span class="brand-name">LAS DESIGN</span></a>
-    <button class="menu-button" type="button" aria-label="Open navigation menu" aria-expanded="false"><span></span><span></span></button>
-    <ul class="nav-links"><li><a href="#services">Services</a></li><li><a href="#booking">Bookings</a></li><li><a href="#why">Why LAS</a></li><li><a href="#contact" class="nav-button">Let's Talk</a></li></ul>
-  </nav></div>
+  <nav class="container">
+    <a class="brand" href="#top" aria-label="LOS home"><span class="brand-mark">LOS</span><span class="brand-name">Digital systems</span></a>
+    <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
+    <ul class="navlinks">
+      <li><a href="#services">Services</a></li><li><a href="#bookings">Bookings</a></li><li><a href="#why">Why LOS</a></li><li><a href="#contact">Start a project</a></li>
+    </ul>
+  </nav>
 </header>
-
 <main id="top">
-<section class="hero"><div class="container hero-grid">
-  <div class="hero-content reveal"><div class="label">Websites · Systems · IT</div><h1>Built to get <span>results.</span></h1><p class="hero-copy">Restaurant websites, live booking systems, SEO, menus, print design and practical digital support, all in one place.</p><div class="hero-points"><span>Web Design</span><span>SEO</span><span>Live Bookings</span><span>Menus & Print</span><span>IT Support</span></div><a href="#contact" class="button">Start a project <span>→</span></a></div>
-  <div class="hero-visual reveal"><img class="hero-image" src="https://images.unsplash.com/photo-1743391714874-9ae693d64899?fm=jpg&amp;q=85&amp;w=1400&amp;auto=format&amp;fit=crop" alt="Modern restaurant interior"><div class="hero-card"><strong>More than a website.</strong><span>Design, bookings and support built around your restaurant.</span></div></div>
-</div></section>
+  <section class="hero">
+    <div class="container hero-inner">
+      <div>
+        <div class="eyebrow">Websites · Systems · Growth</div>
+        <h1>Websites that work.<br><span>Systems that deliver.</span></h1>
+        <p class="hero-copy">LOS creates powerful websites, intelligent restaurant booking platforms and practical digital solutions for independent businesses across Manchester and Northern England.</p>
+        <div class="hero-actions"><a class="btn accent" href="#contact">Start your project <b>↗</b></a><span class="hero-note">Built around your business. Not a template.</span></div>
+      </div>
+      <aside class="hero-panel">
+        <div class="panel-number">01</div><h2>Your business. Better online.</h2>
+        <p>One reliable point of contact for design, development, bookings, SEO, menus, print and everyday digital support.</p>
+        <div class="hero-tags"><span>Mobile first</span><span>Restaurant systems</span><span>Local support</span><span>Built to grow</span></div>
+      </aside>
+    </div>
+  </section>
+  <div class="capabilities"><div class="container cap-grid"><div class="cap">Web design</div><div class="cap">Smart bookings</div><div class="cap">SEO</div><div class="cap">Digital support</div></div></div>
 
-<section class="strip"><div class="strip-inner"><div class="strip-item">Design</div><div class="strip-item">Bookings</div><div class="strip-item">SEO</div><div class="strip-item">Support</div></div></section>
+  <section class="services" id="services">
+    <div class="container">
+      <div class="section-top reveal"><div><div class="eyebrow">What LOS delivers</div><h2>Everything your business needs online.</h2></div><p class="section-intro">Clear design, useful technology and ongoing support, brought together without unnecessary complexity.</p></div>
+      <div class="service-grid">
+        <article class="service reveal"><div class="service-head"><span class="service-no">01</span><div class="icon"><svg viewBox="0 0 32 32"><rect x="3" y="5" width="26" height="18"/><path d="M10 28h12M16 23v5M3 10h26"/></svg></div></div><h3>Website Design</h3><p>Distinctive, responsive websites built to present your business professionally and turn more visitors into enquiries or customers.</p><div class="mini-tags"><span>Design</span><span>Mobile</span><span>Performance</span></div></article>
+        <article class="service reveal"><div class="service-head"><span class="service-no">02</span><div class="icon"><svg viewBox="0 0 32 32"><circle cx="14" cy="14" r="8"/><path d="m20 20 7 7M10 14h8M14 10v8"/></svg></div></div><h3>SEO & Visibility</h3><p>Local SEO, page improvements and focused content that help customers discover your business through Google.</p><div class="mini-tags"><span>Local SEO</span><span>Google</span><span>Content</span></div></article>
+        <article class="service reveal"><div class="service-head"><span class="service-no">03</span><div class="icon"><svg viewBox="0 0 32 32"><rect x="4" y="6" width="24" height="20"/><path d="M9 3v6M23 3v6M4 12h24M9 17h5v5H9z"/></svg></div></div><h3>Booking Platforms</h3><p>Advanced restaurant reservations with live availability, smart table allocation, confirmations and practical staff controls.</p><div class="mini-tags"><span>Live</span><span>Smart tables</span><span>Management</span></div></article>
+        <article class="service reveal"><div class="service-head"><span class="service-no">04</span><div class="icon"><svg viewBox="0 0 32 32"><path d="M5 12h22v16H5zM3 8h26v6H3zM16 8v20M16 8c-4 0-7-1-7-4 0-2 2-3 4-2 2 1 3 4 3 6Zm0 0c4 0 7-1 7-4 0-2-2-3-4-2-2 1-3 4-3 6Z"/></svg></div></div><h3>Gift Vouchers</h3><p>Online voucher sales and custom digital tools designed around how your business actually operates.</p><div class="mini-tags"><span>Online sales</span><span>Admin tools</span><span>Custom code</span></div></article>
+        <article class="service reveal"><div class="service-head"><span class="service-no">05</span><div class="icon"><svg viewBox="0 0 32 32"><path d="M7 3h15l4 4v22H7zM22 3v6h6M11 14h11M11 19h11M11 24h7"/></svg></div></div><h3>Menus, Print & Design</h3><p>Menu updates, price changes, seasonal launches, posters, promotions and polished print-ready artwork when you need it.</p><div class="mini-tags"><span>Menus</span><span>Print</span><span>Promotions</span></div></article>
+        <article class="service reveal"><div class="service-head"><span class="service-no">06</span><div class="icon"><svg viewBox="0 0 32 32"><path d="M13 4h6l1 4 4 2 4-1 3 5-3 3v4l3 3-3 5-4-1-4 2-1 4h-6l-1-4-4-2-4 1-3-5 3-3v-4l-3-3 3-5 4 1 4-2z"/><circle cx="16" cy="19" r="4"/></svg></div></div><h3>IT & Digital Support</h3><p>Practical help with domains, business email, devices, website changes and everyday technology problems.</p><div class="mini-tags"><span>Email</span><span>Domains</span><span>IT help</span></div></article>
+      </div>
+    </div>
+  </section>
 
-<section class="services" id="services"><div class="container"><div class="label reveal">What I can help with</div><h2 class="section-heading reveal">Everything your restaurant needs online.</h2><div class="services-grid">
-  <article class="service reveal"><div class="service-number">01</div><div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="14" rx="1"/><path d="M8 21h8M12 18v3M3 8h18"/></svg></div><h3>Restaurant Websites</h3><p>Distinctive, mobile-first websites designed to turn visitors into customers and make your restaurant look its best.</p><div class="service-tags"><span>Design</span><span>Mobile</span><span>Performance</span></div></article>
-  <article class="service reveal"><div class="service-number">02</div><div class="service-icon"><svg viewBox="0 0 24 24"><circle cx="11" cy="11" r="7"/><path d="m20 20-4-4M11 7v8M7 11h8"/></svg></div><h3>SEO & Visibility</h3><p>Local SEO, page improvements and ongoing updates that help customers discover your restaurant through Google.</p><div class="service-tags"><span>Local SEO</span><span>Google</span><span>Content</span></div></article>
-  <article class="service reveal"><div class="service-number">03</div><div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M16 3v4M8 3v4M3 10h18M8 14h3M8 17h6"/></svg></div><h3>Advanced Restaurant Bookings</h3><p>Live availability, smart table allocation, email confirmations and practical tools for managing restaurant service.</p><div class="service-tags"><span>Live Availability</span><span>Smart Tables</span><span>Email Confirmations</span></div></article>
-  <article class="service reveal"><div class="service-number">04</div><div class="service-icon"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="13" rx="1"/><path d="M12 8v13M3 12h18M7.5 8C5 8 5 4 7.5 4 10 4 12 8 12 8s2-4 4.5-4C19 4 19 8 16.5 8"/></svg></div><h3>Gift Vouchers & Systems</h3><p>Built-in voucher sales, custom admin tools and digital features tailored to the way your business operates.</p><div class="service-tags"><span>Vouchers</span><span>Admin Tools</span><span>Custom Code</span></div></article>
-  <article class="service reveal"><div class="service-number">05</div><div class="service-icon"><svg viewBox="0 0 24 24"><path d="M5 3h10l4 4v14H5zM15 3v5h5M8 12h8M8 16h8"/><path d="M3 14H1v7h4"/></svg></div><h3>Menus & Print</h3><p>Menu updates, new prices, seasonal menus, posters and professional print-ready artwork.</p><div class="service-tags"><span>Menus</span><span>Print</span><span>Promotions</span></div></article>
-  <article class="service reveal"><div class="service-number">06</div><div class="service-icon"><svg viewBox="0 0 24 24"><path d="M9 18h6M10 22h4M12 2a7 7 0 0 0-4 12.7c.8.6 1 1.3 1 2.3h6c0-1 .2-1.7 1-2.3A7 7 0 0 0 12 2z"/><path d="M12 6v5M9.5 8.5h5"/></svg></div><h3>IT & Digital Support</h3><p>Email, domains, devices, website changes and practical troubleshooting when you need it.</p><div class="service-tags"><span>Email</span><span>Domains</span><span>IT Help</span></div></article>
-</div></div></section>
+  <section class="booking" id="bookings"><div class="container booking-grid">
+    <div class="reveal"><div class="eyebrow">The standout service</div><h2>Smarter restaurant bookings.</h2><p class="booking-copy">Give customers live availability while giving your team the controls needed to manage tables, reservations and service confidently. The platform can be shaped around your restaurant rather than forcing your restaurant around generic software.</p><a class="btn light" href="#contact">Discuss your system <b>↗</b></a></div>
+    <div class="feature-grid reveal">
+      <div class="feature"><div class="tick">✓</div><strong>Live availability</strong><small>Show genuine booking times based on service capacity.</small></div>
+      <div class="feature"><div class="tick">✓</div><strong>Smart table allocation</strong><small>Match bookings to suitable tables and combinations.</small></div>
+      <div class="feature"><div class="tick">✓</div><strong>Email confirmations</strong><small>Keep customers informed automatically.</small></div>
+      <div class="feature"><div class="tick">✓</div><strong>Booking management</strong><small>View, update and organise reservations clearly.</small></div>
+      <div class="feature"><div class="tick">✓</div><strong>Check-in & check-out</strong><small>Support the real flow of restaurant service.</small></div>
+      <div class="feature"><div class="tick">✓</div><strong>Staff controls</strong><small>Give the team practical operational tools.</small></div>
+      <div class="feature"><div class="tick">✓</div><strong>Alternative times</strong><small>Recover bookings when the first choice is full.</small></div>
+      <div class="feature"><div class="tick">✓</div><strong>Custom development</strong><small>Add features around your own way of working.</small></div>
+    </div>
+  </div></section>
 
-<section class="booking-focus" id="booking"><div class="container booking-grid">
-  <div class="reveal"><div class="label">Advanced booking platform</div><h2>More control. <span>Less admin.</span></h2></div>
-  <div class="reveal"><p class="booking-copy">Give customers live availability while giving your team the controls needed to manage tables, bookings and service confidently.</p><div class="feature-list"><div>Live availability</div><div>Smart table allocation</div><div>Table combinations</div><div>Automated email confirmations</div><div>Booking management</div><div>Check-in / check-out</div><div>Staff controls</div><div>Alternative booking times</div></div></div>
-</div></section>
+  <section class="why" id="why"><div class="container why-grid">
+    <div class="reveal"><div class="eyebrow">Why LOS?</div><h2>Not another template.</h2><p class="why-copy">Good-looking design matters, but the website also needs to help the business. LOS combines visual design, technical development and practical support in one focused service.</p></div>
+    <div class="proof reveal">
+      <div class="proof-row"><span class="proof-no">01</span><div><h3>Design with purpose</h3><p>Clean, distinctive work shaped around your brand and customers.</p></div></div>
+      <div class="proof-row"><span class="proof-no">02</span><div><h3>Systems that solve problems</h3><p>Useful tools built around real operational needs, not empty features.</p></div></div>
+      <div class="proof-row"><span class="proof-no">03</span><div><h3>Direct, practical support</h3><p>One person who understands the design, code and day-to-day business need.</p></div></div>
+      <div class="proof-row"><span class="proof-no">04</span><div><h3>Room to grow</h3><p>Start with what you need now, then develop the platform as the business grows.</p></div></div>
+    </div>
+  </div></section>
 
-<section class="why" id="why"><div class="container why-grid">
-  <div class="reveal"><div class="label">Why LAS?</div><h2>Not another template.</h2></div>
-  <div class="why-list reveal"><div class="why-item"><span>01</span><div><strong>Design that looks good.</strong><p>Clean, distinctive work shaped around your restaurant.</p></div></div><div class="why-item"><span>02</span><div><strong>SEO that gets you found.</strong><p>Practical improvements focused on local discovery.</p></div></div><div class="why-item"><span>03</span><div><strong>Booking systems that work.</strong><p>Real operational features, not just a simple enquiry form.</p></div></div><div class="why-item"><span>04</span><div><strong>Support beyond launch.</strong><p>Menus, print, design, changes and IT help when the business needs it.</p></div></div></div>
-</div></section>
+  <section class="process"><div class="container">
+    <div class="section-top reveal"><div><div class="eyebrow">Simple process</div><h2>From idea to live.</h2></div><p class="section-intro">A clear route from first conversation to a polished, working result.</p></div>
+    <div class="steps"><div class="step reveal"><span>01</span><h3>Discover</h3><p>Understand the business, audience, current problems and goals.</p></div><div class="step reveal"><span>02</span><h3>Design</h3><p>Create a focused visual direction that works across desktop and mobile.</p></div><div class="step reveal"><span>03</span><h3>Build</h3><p>Develop, refine and test the website or digital system.</p></div><div class="step reveal"><span>04</span><h3>Support</h3><p>Launch confidently, then improve and maintain what matters.</p></div></div>
+  </div></section>
 
-<section class="contact" id="contact"><div class="container contact-grid">
-  <div class="reveal"><div class="label">Start your project</div><h2>Tell me what you need.</h2><p class="contact-intro">Whether you need a new website, a smarter booking system, a menu update or practical IT support, send the details and I will get back to you.</p><a class="contact-email" href="mailto:fatoni.salihu@gmail.com">fatoni.salihu@gmail.com</a></div>
-  <form class="form-grid reveal" id="enquiryForm" novalidate>
-    <div class="field"><label for="name">Your name</label><input id="name" name="name" type="text" autocomplete="name" required></div>
-    <div class="field"><label for="business">Restaurant / business name</label><input id="business" name="business" type="text" autocomplete="organization" required></div>
-    <div class="field full"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required></div>
-    <div class="field full"><label for="service">What can I help with?</label><select id="service" name="service" required><option value="">Choose a service</option><option>New Restaurant Website</option><option>Website Redesign</option><option>Advanced Booking System</option><option>SEO & Google Visibility</option><option>Gift Voucher System</option><option>Menu Updates / Design</option><option>Print & Promotional Design</option><option>IT Support</option><option>Custom Development</option><option>Something Else</option></select></div>
-    <div class="field full"><label for="message">Tell me about your project</label><textarea id="message" name="message" required></textarea></div>
-    <p class="form-note">Selecting “Send enquiry” opens the visitor's email app with the project details prepared for LAS Design.</p><div class="form-status" id="formStatus" aria-live="polite"></div>
-    <div class="submit-row"><button type="submit" class="button">Send enquiry <span>→</span></button></div>
-  </form>
-</div></section>
+  <section class="contact" id="contact"><div class="container contact-grid">
+    <div class="reveal"><div class="eyebrow">Start your project</div><h2>Let's build something useful.</h2><p class="contact-copy">Tell me what your business needs help with. Your enquiry will open in your email app, ready to send directly to LOS.</p><a class="direct" href="mailto:fatoni.salihu@gmail.com">fatoni.salihu@gmail.com</a></div>
+    <form id="enquiryForm" class="reveal" novalidate>
+      <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
+      <div class="field"><label for="business">Business name</label><input id="business" name="business" autocomplete="organization" required></div>
+      <div class="field"><label for="email">Email address</label><input id="email" name="email" type="email" autocomplete="email" required></div>
+      <div class="field"><label for="service">What can I help with?</label><select id="service" name="service" required><option value="">Choose a service</option><option>New website</option><option>Website redesign</option><option>Advanced booking platform</option><option>SEO and Google visibility</option><option>Gift voucher system</option><option>Menu updates or design</option><option>Print and promotional design</option><option>IT and digital support</option><option>Custom development</option><option>Something else</option></select></div>
+      <div class="field full"><label for="message">Tell me about your project</label><textarea id="message" name="message" required></textarea></div>
+      <div class="field full"><button class="btn accent" type="submit">Prepare enquiry <b>↗</b></button></div>
+      <p class="form-note">Submitting opens your email application. No details are stored on this website.</p><p id="formMessage" class="form-message" aria-live="polite"></p>
+    </form>
+  </div></section>
 </main>
-
-<footer><div class="container footer-inner"><div class="footer-brand"><img src="LASLogo.png" alt="LAS Design logo" class="footer-logo"><strong>LAS DESIGN</strong></div><div class="footer-text">Websites · Systems · IT</div><div class="footer-text">© 2026 LAS Design</div></div></footer>
-
+<footer><div class="container footer-inner"><span>© <span id="year"></span> LOS. All rights reserved.</span><span>Websites · Systems · Digital support</span></div></footer>
 <script>
-  const menuButton=document.querySelector('.menu-button');
-  const navLinks=document.querySelector('.nav-links');
-  menuButton.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuButton.setAttribute('aria-expanded',String(open));document.body.classList.toggle('menu-open',open)});
-  document.querySelectorAll('.nav-links a').forEach(link=>link.addEventListener('click',()=>{navLinks.classList.remove('open');menuButton.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open')}));
-
-  const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target)}}),{threshold:.1});
-  document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
-
-  const form=document.getElementById('enquiryForm');
-  const status=document.getElementById('formStatus');
-  form.addEventListener('submit',event=>{
-    event.preventDefault();
-    if(!form.checkValidity()){status.textContent='Please complete all required fields and enter a valid email address.';form.reportValidity();return}
-    const name=document.getElementById('name').value.trim();
-    const business=document.getElementById('business').value.trim();
-    const email=document.getElementById('email').value.trim();
-    const service=document.getElementById('service').value;
-    const message=document.getElementById('message').value.trim();
-    const subject=`LAS Design enquiry: ${service} - ${business}`;
-    const body=`Name: ${name}\nRestaurant / Business: ${business}\nEmail: ${email}\nService: ${service}\n\nProject details:\n${message}`;
-    status.textContent='Opening your email app with the enquiry prepared...';
-    window.location.href=`mailto:fatoni.salihu@gmail.com?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+(function(){
+  const menuBtn=document.querySelector('.menu-btn'), nav=document.querySelector('.navlinks');
+  menuBtn.addEventListener('click',()=>{const open=nav.classList.toggle('open');menuBtn.setAttribute('aria-expanded',String(open));document.body.classList.toggle('menu-open',open)});
+  nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');menuBtn.setAttribute('aria-expanded','false');document.body.classList.remove('menu-open')}));
+  document.getElementById('year').textContent=new Date().getFullYear();
+  const items=document.querySelectorAll('.reveal');
+  if('IntersectionObserver' in window){const ob=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ob.unobserve(e.target)}}),{threshold:.08});items.forEach(i=>ob.observe(i))}else{items.forEach(i=>i.classList.add('visible'))}
+  const form=document.getElementById('enquiryForm'), status=document.getElementById('formMessage');
+  form.addEventListener('submit',e=>{
+    e.preventDefault();
+    if(!form.checkValidity()){status.textContent='Please complete all fields and enter a valid email address.';form.reportValidity();return}
+    const val=id=>document.getElementById(id).value.trim();
+    const subject='LOS enquiry: '+val('service')+' - '+val('business');
+    const body=['Hello Faton,','','I would like to discuss a project with LOS.','','Name: '+val('name'),'Business: '+val('business'),'Email: '+val('email'),'Service: '+val('service'),'','Project details:',''+val('message'),'','Thanks,',val('name')].join('\n');
+    status.textContent='Your email application is opening now.';
+    window.location.href='mailto:fatoni.salihu@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
   });
+})();
 </script>
 </body>
 </html>
