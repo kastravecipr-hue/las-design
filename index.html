@@ -8,7 +8,7 @@
   <title>LOS Design | Websites, Booking Platforms & Digital Support</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    :root{--black:#080808;--ink:#171717;--grey:#6e6e6e;--line:#d9d9d4;--soft:#f2f2ee;--white:#fff;--green:#d7ff3f;--violet:#a78bfa;--cyan:#67e8f9}
+    :root{--black:#080808;--ink:#171717;--grey:#6e6e6e;--line:#d9d9d4;--soft:#f2f2ee;--white:#fff;--green:#e06424;--violet:#6f351d;--cyan:#f0a06a}
     html{scroll-behavior:smooth}
     body{font-family:Arial,Helvetica,sans-serif;background:var(--white);color:var(--black);line-height:1.5;overflow-x:hidden}
     body.menu-open{overflow:hidden}
@@ -22,7 +22,7 @@
     .btn:hover{background:transparent;color:var(--black);transform:translateY(-2px)}
     .btn.light{background:white;color:var(--black);border-color:white}
     .btn.light:hover{background:transparent;color:white}
-    .btn.accent{background:linear-gradient(90deg,var(--green),#f3ffab);color:var(--black);border-color:var(--green);box-shadow:0 10px 30px rgba(215,255,63,.12)}
+    .btn.accent{background:linear-gradient(90deg,var(--green),#ff9a55);color:var(--black);border-color:var(--green);box-shadow:0 10px 30px rgba(224,100,36,.20)}
     .btn.accent:hover{background:white;border-color:white}
 
     header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,.09)}
@@ -36,8 +36,8 @@
     .menu-btn span,.menu-btn:before,.menu-btn:after{content:"";position:absolute;left:8px;width:26px;height:2px;background:#000;transition:.25s}
     .menu-btn:before{top:13px}.menu-btn span{top:20px}.menu-btn:after{top:27px}
 
-    .hero{background:var(--black);color:white;position:relative;overflow:hidden}
-    .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 18%,rgba(167,139,250,.20),transparent 28%),radial-gradient(circle at 90% 60%,rgba(103,232,249,.10),transparent 24%),radial-gradient(circle at 20% 80%,rgba(215,255,63,.08),transparent 29%),linear-gradient(115deg,transparent 55%,rgba(255,255,255,.035) 55%);pointer-events:none}
+    .hero{background:linear-gradient(90deg,rgba(5,5,5,.94) 0%,rgba(5,5,5,.80) 48%,rgba(5,5,5,.43) 100%),url("los-restaurant-hero.png") center/cover no-repeat;color:white;position:relative;overflow:hidden}
+    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.22),transparent 60%);pointer-events:none}
     .hero-inner{position:relative;min-height:660px;padding:88px 0 67px;display:grid;grid-template-columns:1.35fr .65fr;gap:60px;align-items:end}
     .hero h1{font-size:clamp(58px,8.7vw,126px);line-height:.84;letter-spacing:-7px;text-transform:uppercase;max-width:940px;margin:24px 0 31px}
     .hero h1 span{color:var(--green)}
@@ -145,17 +145,17 @@
     .portfolio{background:#0a0a0a;color:#fff;overflow:hidden}
     .portfolio .section-intro{color:#999}
     .project-stage{display:grid;grid-template-columns:1.1fr .9fr;border:1px solid #2b2b2b;background:#111;min-height:530px}
-    .project-visual{position:relative;padding:52px;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 25% 20%,rgba(215,255,63,.13),transparent 28%),radial-gradient(circle at 80% 75%,rgba(167,139,250,.18),transparent 32%),#0b0b0b}
+    .project-visual{position:relative;padding:52px;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 25% 20%,rgba(224,100,36,.17),transparent 28%),radial-gradient(circle at 80% 75%,rgba(126,71,42,.18),transparent 32%),#0b0b0b}
     .browser{width:min(100%,680px);background:#f7f7f4;border:1px solid #4b4b4b;box-shadow:0 35px 90px rgba(0,0,0,.45);transform:perspective(1200px) rotateY(-5deg) rotateX(2deg);transition:.3s}
     .project-stage:hover .browser{transform:perspective(1200px) rotateY(0) rotateX(0) translateY(-6px)}
     .browser-top{height:31px;background:#e5e5e1;border-bottom:1px solid #ccc;display:flex;align-items:center;gap:6px;padding:0 12px}
-    .browser-top i{width:7px;height:7px;border-radius:50%;background:#999}.browser-top i:first-child{background:#111}.browser-top i:nth-child(2){background:#a78bfa}.browser-top i:nth-child(3){background:#d7ff3f}
+    .browser-top i{width:7px;height:7px;border-radius:50%;background:#999}.browser-top i:first-child{background:#111}.browser-top i:nth-child(2){background:#6f351d}.browser-top i:nth-child(3){background:#e06424}
     .browser-page{min-height:330px;color:#080808;padding:32px;background:linear-gradient(120deg,#fff 60%,#ecece7 60%)}
     .mock-nav{display:flex;justify-content:space-between;font-size:9px;font-weight:900;letter-spacing:1.2px}.mock-logo{font-size:18px}.mock-hero{padding-top:55px;max-width:440px}.mock-kicker{font-size:8px;letter-spacing:2px}.mock-hero h3{font-size:clamp(34px,5vw,62px);line-height:.88;letter-spacing:-3px;margin:13px 0}.mock-hero p{font-size:11px;color:#666;max-width:300px}.mock-btn{display:inline-block;background:#000;color:#fff;margin-top:18px;padding:10px 13px;font-size:8px;letter-spacing:1px}
     .project-info{padding:52px;display:flex;flex-direction:column;justify-content:center}.project-badge{display:inline-flex;align-self:flex-start;color:#000;background:var(--green);padding:7px 9px;font-size:9px;font-weight:900;letter-spacing:1px;text-transform:uppercase}.project-info h3{font-size:42px;line-height:1;letter-spacing:-2px;margin:20px 0 15px}.project-info p{color:#999;font-size:14px;margin-bottom:25px}.project-list{list-style:none;border-top:1px solid #303030}.project-list li{padding:12px 0;border-bottom:1px solid #303030;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;display:flex;justify-content:space-between}.project-list li:after{content:'✓';color:var(--green)}
     .hospitality{background:#eeeef0}.hospitality-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}.hospitality h2{font-size:clamp(46px,6vw,82px);line-height:.92;letter-spacing:-4px;margin:18px 0 23px}.hospitality-copy{color:var(--grey);margin-bottom:27px}.system-map{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:12px}.system-node{background:#fff;border:1px solid #d2d2cd;padding:22px;min-height:124px;transition:.25s}.system-node:hover{background:#000;color:#fff;transform:translateY(-4px)}.system-node b{display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:9px}.system-node p{font-size:12px;color:#777}.system-node strong{display:block;font-size:27px;color:var(--green);margin-bottom:10px}
     .floating-cta{position:fixed;right:22px;bottom:22px;z-index:45;background:var(--green);color:#000;border:1px solid #000;padding:14px 17px;font-size:10px;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;box-shadow:0 12px 35px rgba(0,0,0,.22);transition:.25s}.floating-cta:hover{background:#fff;transform:translateY(-3px)}
-    .cursor-glow{position:fixed;width:340px;height:340px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,rgba(167,139,250,.09),transparent 65%);transform:translate(-50%,-50%);opacity:0;transition:opacity .3s}
+    .cursor-glow{position:fixed;width:340px;height:340px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,rgba(224,100,36,.09),transparent 65%);transform:translate(-50%,-50%);opacity:0;transition:opacity .3s}
     @media(max-width:900px){.project-stage,.hospitality-grid{grid-template-columns:1fr}.project-info{padding:38px}.hospitality-grid{gap:45px}.need-inner{align-items:flex-start;flex-direction:column}.need-options{justify-content:flex-start}.cursor-glow{display:none}}
     @media(max-width:620px){.rotating-word{min-width:0}.project-visual{padding:24px}.browser-page{min-height:270px;padding:22px}.mock-hero{padding-top:40px}.project-info{padding:29px}.project-info h3{font-size:34px}.system-map{grid-template-columns:1fr}.floating-cta{right:13px;bottom:13px;padding:13px}.need-option{flex:1 1 calc(50% - 8px)}.hospitality h2{letter-spacing:-2.6px}}
 
@@ -178,13 +178,13 @@
     <div class="container hero-inner">
       <div>
         <div class="eyebrow">Design · Systems · Growth</div>
-        <h1>Design. Build.<br><span class="rotating-word" id="rotatingWord">Websites.</span></h1>
-        <p class="hero-copy">LOS Design creates premium websites, intelligent restaurant booking platforms and practical digital solutions for independent businesses across Manchester and Northern England.</p>
+        <h1>Design.<br><span class="rotating-word" id="rotatingWord">Websites.</span></h1>
+        <p class="hero-copy">Premium websites, restaurant booking systems and digital support for independent businesses.</p>
         <div class="hero-actions"><a class="btn accent" href="#contact">Start your project <b>↗</b></a><span class="hero-note">Built around your business. Not a template.</span></div>
       </div>
       <aside class="hero-panel">
         <div class="panel-number">01</div><h2>Design that looks sharp. Systems that work hard.</h2>
-        <p>One reliable point of contact for design, development, bookings, SEO, menus, print and everyday digital support.</p>
+        <p>Web design, booking systems and digital support in one place.</p>
         <div class="hero-tags"><span>Mobile first</span><span>Restaurant systems</span><span>Local support</span><span>Built to grow</span></div>
       </aside>
     </div>
