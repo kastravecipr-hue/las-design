@@ -1,0 +1,898 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <title>LAS Design | Websites, Systems & Growth</title>
+
+  <meta name="description" content="LAS Design creates modern restaurant websites, advanced booking systems, SEO solutions, gift voucher systems and custom digital platforms.">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    :root {
+      --black: #111111;
+      --charcoal: #292929;
+      --grey: #777777;
+      --light-grey: #e8e8e8;
+      --off-white: #f7f7f5;
+      --white: #ffffff;
+    }
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: Arial, Helvetica, sans-serif;
+      background: var(--white);
+      color: var(--black);
+      line-height: 1.6;
+      overflow-x: hidden;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1180px, 90%);
+      margin: auto;
+    }
+
+    /* NAVIGATION */
+
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: rgba(255,255,255,0.96);
+      border-bottom: 1px solid var(--light-grey);
+      backdrop-filter: blur(10px);
+    }
+
+    nav {
+      min-height: 82px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 30px;
+    }
+
+    .brand {
+      display: flex;
+      align-items: center;
+      gap: 13px;
+    }
+
+    .mini-logo {
+      width: 48px;
+      height: 48px;
+      border: 1.5px solid #111;
+      border-radius: 50%;
+      display: grid;
+      place-items: center;
+      font-size: 16px;
+      font-weight: 900;
+      letter-spacing: -1px;
+    }
+
+    .brand-name {
+      font-size: 14px;
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
+
+    .nav-links {
+      display: flex;
+      align-items: center;
+      gap: 35px;
+      list-style: none;
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 1.4px;
+      text-transform: uppercase;
+    }
+
+    .nav-contact {
+      border: 1px solid var(--black);
+      padding: 11px 18px;
+      transition: 0.25s ease;
+    }
+
+    .nav-contact:hover {
+      background: var(--black);
+      color: var(--white);
+    }
+
+    /* HERO */
+
+    .hero {
+      min-height: 82vh;
+      display: flex;
+      align-items: center;
+      padding: 100px 0;
+      border-bottom: 1px solid var(--light-grey);
+    }
+
+    .eyebrow {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      font-size: 11px;
+      font-weight: 700;
+      margin-bottom: 30px;
+    }
+
+    .eyebrow::before {
+      content: "";
+      width: 44px;
+      height: 1px;
+      background: var(--black);
+    }
+
+    .hero h1 {
+      max-width: 1000px;
+      font-size: clamp(58px, 8.5vw, 125px);
+      line-height: 0.92;
+      letter-spacing: -6px;
+      font-weight: 800;
+    }
+
+    .hero h1 span {
+      color: #999;
+    }
+
+    .hero-bottom {
+      margin-top: 60px;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 80px;
+      align-items: end;
+    }
+
+    .hero-copy {
+      max-width: 570px;
+      font-size: 19px;
+      color: #555;
+      line-height: 1.7;
+    }
+
+    .button {
+      justify-self: end;
+      display: inline-flex;
+      align-items: center;
+      gap: 18px;
+      background: var(--black);
+      color: white;
+      padding: 19px 28px;
+      font-size: 12px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      transition: 0.25s ease;
+    }
+
+    .button:hover {
+      background: #444;
+      transform: translateY(-2px);
+    }
+
+    /* INTRO */
+
+    .intro {
+      padding: 130px 0;
+    }
+
+    .section-number {
+      color: #999;
+      font-size: 12px;
+      letter-spacing: 2px;
+      margin-bottom: 30px;
+    }
+
+    .section-heading {
+      font-size: clamp(42px, 6vw, 78px);
+      letter-spacing: -3px;
+      line-height: 1;
+      max-width: 850px;
+    }
+
+    .intro-text {
+      max-width: 660px;
+      margin: 45px 0 0 auto;
+      font-size: 20px;
+      line-height: 1.7;
+      color: #555;
+    }
+
+    /* SERVICES */
+
+    .services {
+      padding-bottom: 130px;
+    }
+
+    .services-grid {
+      border-top: 1px solid var(--black);
+    }
+
+    .service {
+      display: grid;
+      grid-template-columns: 80px 1fr 1fr;
+      gap: 30px;
+      padding: 45px 0;
+      border-bottom: 1px solid var(--light-grey);
+      transition: 0.25s ease;
+    }
+
+    .service:hover {
+      padding-left: 15px;
+      background: var(--off-white);
+    }
+
+    .service-number {
+      color: #999;
+      font-size: 12px;
+    }
+
+    .service h3 {
+      font-size: 28px;
+      font-weight: 500;
+      letter-spacing: -1px;
+    }
+
+    .service p {
+      max-width: 480px;
+      color: #666;
+      font-size: 15px;
+      line-height: 1.8;
+    }
+
+    /* STATEMENT */
+
+    .statement {
+      background: var(--black);
+      color: var(--white);
+      padding: 150px 0;
+    }
+
+    .statement-label {
+      color: #aaa;
+      letter-spacing: 3px;
+      font-size: 11px;
+      text-transform: uppercase;
+      margin-bottom: 35px;
+    }
+
+    .statement h2 {
+      max-width: 1050px;
+      font-size: clamp(48px, 7vw, 95px);
+      line-height: 0.98;
+      letter-spacing: -5px;
+    }
+
+    .statement h2 span {
+      color: #777;
+    }
+
+    /* RESULTS */
+
+    .results {
+      padding: 130px 0;
+    }
+
+    .results-title {
+      margin-bottom: 70px;
+    }
+
+    .results-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      border-top: 1px solid var(--light-grey);
+      border-bottom: 1px solid var(--light-grey);
+    }
+
+    .result {
+      padding: 55px 30px;
+      border-right: 1px solid var(--light-grey);
+    }
+
+    .result:last-child {
+      border-right: none;
+    }
+
+    .result strong {
+      display: block;
+      font-size: 31px;
+      margin-bottom: 18px;
+      letter-spacing: -1px;
+    }
+
+    .result p {
+      font-size: 14px;
+      color: #777;
+    }
+
+    /* DIFFERENT */
+
+    .different {
+      background: var(--off-white);
+      padding: 130px 0;
+    }
+
+    .different-layout {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 100px;
+    }
+
+    .different h2 {
+      font-size: clamp(48px, 6vw, 80px);
+      line-height: 1;
+      letter-spacing: -4px;
+    }
+
+    .different-copy {
+      font-size: 19px;
+      color: #555;
+    }
+
+    .principles {
+      margin-top: 50px;
+    }
+
+    .principle {
+      padding: 20px 0;
+      border-bottom: 1px solid #ccc;
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+
+    /* CONTACT */
+
+    .contact {
+      padding: 150px 0;
+    }
+
+    .contact h2 {
+      max-width: 950px;
+      font-size: clamp(55px, 8vw, 110px);
+      line-height: 0.95;
+      letter-spacing: -5px;
+    }
+
+    .contact-bottom {
+      margin-top: 70px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 50px;
+    }
+
+    .contact p {
+      max-width: 550px;
+      font-size: 18px;
+      color: #666;
+    }
+
+    /* FOOTER */
+
+    footer {
+      background: var(--black);
+      color: white;
+      padding: 45px 0;
+    }
+
+    .footer-inner {
+      display: flex;
+      justify-content: space-between;
+      gap: 30px;
+      align-items: center;
+    }
+
+    .footer-logo {
+      font-weight: 700;
+      letter-spacing: 4px;
+    }
+
+    .footer-copy {
+      color: #999;
+      font-size: 11px;
+      letter-spacing: 1px;
+    }
+
+    /* ANIMATION */
+
+    .reveal {
+      opacity: 0;
+      transform: translateY(25px);
+      transition: opacity .7s ease, transform .7s ease;
+    }
+
+    .reveal.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* MOBILE */
+
+    @media (max-width: 800px) {
+
+      nav {
+        min-height: 70px;
+      }
+
+      .nav-links li:not(:last-child) {
+        display: none;
+      }
+
+      .brand-name {
+        letter-spacing: 2px;
+      }
+
+      .hero {
+        min-height: auto;
+        padding: 90px 0;
+      }
+
+      .hero h1 {
+        letter-spacing: -3px;
+      }
+
+      .hero-bottom {
+        grid-template-columns: 1fr;
+        gap: 35px;
+      }
+
+      .button {
+        justify-self: start;
+      }
+
+      .section-heading {
+        letter-spacing: -2px;
+      }
+
+      .service {
+        grid-template-columns: 35px 1fr;
+      }
+
+      .service p {
+        grid-column: 2;
+      }
+
+      .statement h2,
+      .contact h2 {
+        letter-spacing: -3px;
+      }
+
+      .results-grid {
+        grid-template-columns: 1fr 1fr;
+      }
+
+      .result:nth-child(2) {
+        border-right: none;
+      }
+
+      .result:nth-child(-n+2) {
+        border-bottom: 1px solid var(--light-grey);
+      }
+
+      .different-layout {
+        grid-template-columns: 1fr;
+        gap: 45px;
+      }
+
+      .contact-bottom {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+
+      .footer-inner {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+    }
+
+    @media (max-width: 480px) {
+
+      .hero h1 {
+        font-size: 54px;
+      }
+
+      .hero-copy {
+        font-size: 17px;
+      }
+
+      .service {
+        grid-template-columns: 1fr;
+      }
+
+      .service p {
+        grid-column: 1;
+      }
+
+      .results-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .result,
+      .result:nth-child(2) {
+        border-right: none;
+        border-bottom: 1px solid var(--light-grey);
+      }
+
+      .result:last-child {
+        border-bottom: none;
+      }
+    }
+
+  </style>
+</head>
+
+<body>
+
+<header>
+  <div class="container">
+    <nav>
+
+      <a href="#" class="brand">
+        <div class="mini-logo">LAS</div>
+        <span class="brand-name">LAS DESIGN</span>
+      </a>
+
+      <ul class="nav-links">
+        <li><a href="#services">Services</a></li>
+        <li><a href="#approach">Approach</a></li>
+        <li><a href="#contact" class="nav-contact">Let's Talk</a></li>
+      </ul>
+
+    </nav>
+  </div>
+</header>
+
+
+<main>
+
+<section class="hero">
+
+  <div class="container">
+
+    <div class="eyebrow">Websites · Systems · Growth</div>
+
+    <h1>
+      Websites that do
+      <span>more.</span>
+    </h1>
+
+    <div class="hero-bottom">
+
+      <p class="hero-copy">
+        I design and build modern restaurant websites with the systems
+        behind them to help your business get found, get booked and grow.
+      </p>
+
+      <a href="#contact" class="button">
+        Start a project
+        <span>→</span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="intro reveal" id="services">
+
+  <div class="container">
+
+    <div class="section-number">01 / WHAT I DO</div>
+
+    <h2 class="section-heading">
+      More than web design.
+    </h2>
+
+    <p class="intro-text">
+      A restaurant website shouldn't simply look good.
+      It should help customers discover your business,
+      make reservations, purchase from you and interact
+      with your restaurant effortlessly.
+    </p>
+
+  </div>
+
+</section>
+
+
+<section class="services">
+
+  <div class="container">
+
+    <div class="services-grid">
+
+      <div class="service reveal">
+        <div class="service-number">01</div>
+        <h3>Website Design</h3>
+        <p>
+          Modern, responsive restaurant websites designed around your
+          brand, menus, photography and customer journey.
+        </p>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-number">02</div>
+        <h3>SEO & Google Visibility</h3>
+        <p>
+          Search optimisation designed to improve local visibility and
+          help customers discover your restaurant when they're searching.
+        </p>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-number">03</div>
+        <h3>Advanced Booking Systems</h3>
+        <p>
+          Custom reservation technology with live availability,
+          booking management, intelligent table allocation and
+          practical controls for your team.
+        </p>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-number">04</div>
+        <h3>Gift Voucher Systems</h3>
+        <p>
+          Give customers an easy way to purchase gift vouchers
+          directly through your website while creating another
+          revenue opportunity for your restaurant.
+        </p>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-number">05</div>
+        <h3>Performance & Mobile</h3>
+        <p>
+          Lightweight, responsive experiences built carefully for
+          smartphones, tablets and desktop without sacrificing design.
+        </p>
+      </div>
+
+      <div class="service reveal">
+        <div class="service-number">06</div>
+        <h3>Custom Development</h3>
+        <p>
+          Booking logic, admin tools and custom functionality built
+          around the way your restaurant actually operates.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="statement reveal">
+
+  <div class="container">
+
+    <div class="statement-label">
+      Not just another restaurant website
+    </div>
+
+    <h2>
+      Your website shouldn't just sit there.
+      <span>It should work for your business.</span>
+    </h2>
+
+  </div>
+
+</section>
+
+
+<section class="results">
+
+  <div class="container">
+
+    <div class="results-title reveal">
+
+      <div class="section-number">02 / THE GOAL</div>
+
+      <h2 class="section-heading">
+        Built around results.
+      </h2>
+
+    </div>
+
+    <div class="results-grid">
+
+      <div class="result reveal">
+        <strong>Get Found.</strong>
+        <p>
+          Better local visibility through SEO and search optimisation.
+        </p>
+      </div>
+
+      <div class="result reveal">
+        <strong>Get Booked.</strong>
+        <p>
+          Make booking a table quick, simple and effortless.
+        </p>
+      </div>
+
+      <div class="result reveal">
+        <strong>Sell.</strong>
+        <p>
+          Add digital opportunities such as online gift vouchers.
+        </p>
+      </div>
+
+      <div class="result reveal">
+        <strong>Grow.</strong>
+        <p>
+          Build a digital platform that can develop alongside your business.
+        </p>
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="different" id="approach">
+
+  <div class="container">
+
+    <div class="different-layout">
+
+      <div class="reveal">
+
+        <div class="section-number">
+          03 / THE APPROACH
+        </div>
+
+        <h2>
+          Built differently.
+        </h2>
+
+      </div>
+
+      <div class="different-copy reveal">
+
+        <p>
+          Your restaurant isn't a template, so your website shouldn't
+          feel like one.
+        </p>
+
+        <br>
+
+        <p>
+          LAS Design combines thoughtful visual design with practical
+          systems and custom development, creating digital experiences
+          built around real businesses.
+        </p>
+
+        <div class="principles">
+
+          <div class="principle">
+            No generic restaurant templates
+          </div>
+
+          <div class="principle">
+            No unnecessary clutter
+          </div>
+
+          <div class="principle">
+            Thoughtful design
+          </div>
+
+          <div class="principle">
+            Smart technology
+          </div>
+
+          <div class="principle">
+            Built around your business
+          </div>
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+</section>
+
+
+<section class="contact reveal" id="contact">
+
+  <div class="container">
+
+    <div class="section-number">
+      04 / LET'S TALK
+    </div>
+
+    <h2>
+      Let's build something great.
+    </h2>
+
+    <div class="contact-bottom">
+
+      <p>
+        Tell me about your restaurant, your current website and
+        what you want your digital presence to achieve.
+      </p>
+
+      <a href="mailto:hello@lasdesign.co.uk" class="button">
+        Start a project
+        <span>→</span>
+      </a>
+
+    </div>
+
+  </div>
+
+</section>
+
+</main>
+
+
+<footer>
+
+  <div class="container footer-inner">
+
+    <div class="footer-logo">
+      LAS DESIGN
+    </div>
+
+    <div class="footer-copy">
+      WEBSITES · SYSTEMS · GROWTH
+    </div>
+
+    <div class="footer-copy">
+      © 2026 LAS DESIGN
+    </div>
+
+  </div>
+
+</footer>
+
+
+<script>
+
+  const observer = new IntersectionObserver((entries) => {
+
+    entries.forEach(entry => {
+
+      if (entry.isIntersecting) {
+        entry.target.classList.add("visible");
+      }
+
+    });
+
+  }, {
+    threshold: 0.12
+  });
+
+  document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+  });
+
+</script>
+
+</body>
+</html>
