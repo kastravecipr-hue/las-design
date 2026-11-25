@@ -8,7 +8,7 @@
   <title>LOS Design | Websites, Booking Platforms & Digital Support</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    :root{--black:#080808;--ink:#171717;--grey:#6e6e6e;--line:#d9d9d4;--soft:#f2f2ee;--white:#fff;--green:#e06424;--violet:#6f351d;--cyan:#f0a06a}
+    :root{--black:#111111;--ink:#1b1b1b;--grey:#6b6b6b;--line:#d4d4d0;--soft:#ededeb;--white:#fff;--green:#e06424;--violet:#764126;--cyan:#ef9b62}
     html{scroll-behavior:smooth}
     body{font-family:Arial,Helvetica,sans-serif;background:var(--white);color:var(--black);line-height:1.5;overflow-x:hidden}
     body.menu-open{overflow:hidden}
@@ -36,22 +36,23 @@
     .menu-btn span,.menu-btn:before,.menu-btn:after{content:"";position:absolute;left:8px;width:26px;height:2px;background:#000;transition:.25s}
     .menu-btn:before{top:13px}.menu-btn span{top:20px}.menu-btn:after{top:27px}
 
-    .hero{background:linear-gradient(90deg,rgba(5,5,5,.94) 0%,rgba(5,5,5,.80) 48%,rgba(5,5,5,.43) 100%),url("los-restaurant-hero.png") center/cover no-repeat;color:white;position:relative;overflow:hidden}
-    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(90deg,rgba(0,0,0,.22),transparent 60%);pointer-events:none}
-    .hero-inner{position:relative;min-height:660px;padding:88px 0 67px;display:grid;grid-template-columns:1.35fr .65fr;gap:60px;align-items:end}
+    .hero{background:#f3f3f1;color:#111;position:relative;overflow:hidden}
+    .hero:after{content:"";position:absolute;z-index:0;right:0;top:0;width:48%;height:100%;background:linear-gradient(90deg,#f3f3f1 0%,rgba(243,243,241,.18) 26%,rgba(20,20,20,.10) 100%),url("los-restaurant-hero.png") center/cover no-repeat;filter:grayscale(1);opacity:.78}
+    .hero:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(255,255,255,.9) 0%,rgba(243,243,241,.72) 53%,transparent 68%);pointer-events:none;z-index:1}
+    .hero-inner{position:relative;z-index:2;min-height:660px;padding:88px 0 67px;display:grid;grid-template-columns:1.35fr .65fr;gap:60px;align-items:end}
     .hero h1{font-size:clamp(58px,8.7vw,126px);line-height:.84;letter-spacing:-7px;text-transform:uppercase;max-width:940px;margin:24px 0 31px}
     .hero h1 span{color:var(--green)}
-    .hero-copy{max-width:625px;font-size:18px;color:#c6c6c6;margin-bottom:31px}
+    .hero-copy{max-width:560px;font-size:17px;color:#555;margin-bottom:31px}
     .hero-actions{display:flex;align-items:center;gap:23px;flex-wrap:wrap}
-    .hero-note{font-size:10px;letter-spacing:1.7px;text-transform:uppercase;color:#999}
-    .hero-panel{border:1px solid rgba(255,255,255,.18);padding:30px;background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.025));backdrop-filter:blur(18px);box-shadow:0 30px 80px rgba(0,0,0,.35);position:relative;overflow:hidden}.hero-panel:after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;right:-45px;top:-45px;background:var(--violet);filter:blur(50px);opacity:.26;pointer-events:none}
+    .hero-note{font-size:10px;letter-spacing:1.7px;text-transform:uppercase;color:#666}
+    .hero-panel{border:1px solid rgba(0,0,0,.15);padding:30px;background:rgba(255,255,255,.80);backdrop-filter:blur(18px);box-shadow:0 30px 80px rgba(0,0,0,.35);position:relative;overflow:hidden}.hero-panel:after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;right:-45px;top:-45px;background:var(--violet);filter:blur(50px);opacity:.26;pointer-events:none}
     .panel-number{font-size:68px;line-height:1;font-weight:900;letter-spacing:-4px;color:var(--green)}
     .hero-panel h2{font-size:22px;margin:17px 0 8px}
-    .hero-panel p{font-size:14px;color:#aaa}
+    .hero-panel p{font-size:14px;color:#666}
     .hero-tags{display:flex;flex-wrap:wrap;gap:7px;margin-top:22px}
-    .hero-tags span{border:1px solid #333;padding:8px 10px;font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
+    .hero-tags span{border:1px solid #aaa;padding:8px 10px;font-size:9px;font-weight:800;letter-spacing:1px;text-transform:uppercase}
 
-    .capabilities{background:var(--green);border-bottom:1px solid #000}
+    .capabilities{background:#dededb;border-bottom:1px solid #bdbdb8;border-top:1px solid #d0d0cc}
     .cap-grid{display:grid;grid-template-columns:repeat(4,1fr)}
     .cap{padding:19px;border-right:1px solid rgba(0,0,0,.25);text-align:center;font-size:10px;font-weight:900;letter-spacing:1.8px;text-transform:uppercase}
     .cap:last-child{border-right:0}
@@ -61,7 +62,7 @@
     .section-top h2{font-size:clamp(40px,6vw,78px);line-height:.95;letter-spacing:-4px;max-width:770px;margin-top:17px}
     .section-intro{max-width:370px;color:var(--grey);font-size:15px}
 
-    .services{background:var(--soft)}
+    .services{background:#ededeb}
     .service-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
     .service{background:white;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:31px;min-height:310px;display:flex;flex-direction:column;transition:.25s}
     .service:hover{background:linear-gradient(145deg,#0b0b0b,#171717);color:white;transform:translateY(-7px);box-shadow:0 24px 50px rgba(0,0,0,.15)}
@@ -134,7 +135,7 @@
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.service,.btn{transition:none}}
   
     /* Advanced LOS Design additions */
-    .rotating-word{display:inline-block;min-width:8.3ch;color:var(--green);transition:opacity .22s ease,transform .22s ease}
+    .rotating-word{display:inline-block;min-width:8.3ch;color:#d75b1f;transition:opacity .22s ease,transform .22s ease}
     .rotating-word.swap{opacity:0;transform:translateY(12px)}
     .need-bar{background:#fff;padding:28px 0;border-bottom:1px solid var(--line)}
     .need-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
@@ -159,6 +160,8 @@
     @media(max-width:900px){.project-stage,.hospitality-grid{grid-template-columns:1fr}.project-info{padding:38px}.hospitality-grid{gap:45px}.need-inner{align-items:flex-start;flex-direction:column}.need-options{justify-content:flex-start}.cursor-glow{display:none}}
     @media(max-width:620px){.rotating-word{min-width:0}.project-visual{padding:24px}.browser-page{min-height:270px;padding:22px}.mock-hero{padding-top:40px}.project-info{padding:29px}.project-info h3{font-size:34px}.system-map{grid-template-columns:1fr}.floating-cta{right:13px;bottom:13px;padding:13px}.need-option{flex:1 1 calc(50% - 8px)}.hospitality h2{letter-spacing:-2.6px}}
 
+  
+    @media(max-width:900px){.hero:after{width:100%;opacity:.16;filter:grayscale(1)}.hero:before{background:rgba(243,243,241,.88)}.hero-panel{background:rgba(255,255,255,.88)}}
   </style>
 </head>
 <body>
@@ -179,7 +182,7 @@
       <div>
         <div class="eyebrow">Design · Systems · Growth</div>
         <h1>Design.<br><span class="rotating-word" id="rotatingWord">Websites.</span></h1>
-        <p class="hero-copy">Premium websites, restaurant booking systems and digital support for independent businesses.</p>
+        <p class="hero-copy">Websites, booking systems and practical digital support for independent businesses.</p>
         <div class="hero-actions"><a class="btn accent" href="#contact">Start your project <b>↗</b></a><span class="hero-note">Built around your business. Not a template.</span></div>
       </div>
       <aside class="hero-panel">
