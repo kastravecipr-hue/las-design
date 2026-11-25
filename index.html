@@ -5,10 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta name="description" content="LOS builds restaurant websites, advanced booking platforms, SEO, gift voucher systems, menus, print design and practical digital support across Manchester and Northern England.">
   <meta name="theme-color" content="#0a0a0a">
-  <title>LOS | Websites, Booking Platforms & Digital Support</title>
+  <title>LOS Design | Websites, Booking Platforms & Digital Support</title>
   <style>
     *{margin:0;padding:0;box-sizing:border-box}
-    :root{--black:#080808;--ink:#171717;--grey:#6e6e6e;--line:#d9d9d4;--soft:#f2f2ee;--white:#fff;--green:#c8ff42}
+    :root{--black:#080808;--ink:#171717;--grey:#6e6e6e;--line:#d9d9d4;--soft:#f2f2ee;--white:#fff;--green:#d7ff3f;--violet:#a78bfa;--cyan:#67e8f9}
     html{scroll-behavior:smooth}
     body{font-family:Arial,Helvetica,sans-serif;background:var(--white);color:var(--black);line-height:1.5;overflow-x:hidden}
     body.menu-open{overflow:hidden}
@@ -22,13 +22,13 @@
     .btn:hover{background:transparent;color:var(--black);transform:translateY(-2px)}
     .btn.light{background:white;color:var(--black);border-color:white}
     .btn.light:hover{background:transparent;color:white}
-    .btn.accent{background:var(--green);color:var(--black);border-color:var(--green)}
+    .btn.accent{background:linear-gradient(90deg,var(--green),#f3ffab);color:var(--black);border-color:var(--green);box-shadow:0 10px 30px rgba(215,255,63,.12)}
     .btn.accent:hover{background:white;border-color:white}
 
     header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.94);backdrop-filter:blur(14px);border-bottom:1px solid rgba(0,0,0,.09)}
     nav{height:76px;display:flex;align-items:center;justify-content:space-between}
     .brand{display:flex;align-items:center;gap:13px;font-weight:900;letter-spacing:-1px}
-    .brand-mark{width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:var(--black);color:white;font-size:16px;letter-spacing:-1px}
+    .brand-mark{width:48px;height:48px;border-radius:14px;display:grid;place-items:center;background:linear-gradient(135deg,#050505,#272727);color:white;font-size:16px;letter-spacing:-1px;border:1px solid #333;box-shadow:inset 0 1px rgba(255,255,255,.15)}
     .brand-name{font-size:12px;letter-spacing:2px;text-transform:uppercase}
     .navlinks{display:flex;align-items:center;gap:30px;list-style:none;font-size:11px;font-weight:800;letter-spacing:1.4px;text-transform:uppercase}
     .navlinks a:hover{opacity:.5}
@@ -37,14 +37,14 @@
     .menu-btn:before{top:13px}.menu-btn span{top:20px}.menu-btn:after{top:27px}
 
     .hero{background:var(--black);color:white;position:relative;overflow:hidden}
-    .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 82% 30%,rgba(200,255,66,.14),transparent 32%),linear-gradient(115deg,transparent 55%,rgba(255,255,255,.04) 55%);pointer-events:none}
+    .hero:before{content:"";position:absolute;inset:0;background:radial-gradient(circle at 78% 18%,rgba(167,139,250,.20),transparent 28%),radial-gradient(circle at 90% 60%,rgba(103,232,249,.10),transparent 24%),radial-gradient(circle at 20% 80%,rgba(215,255,63,.08),transparent 29%),linear-gradient(115deg,transparent 55%,rgba(255,255,255,.035) 55%);pointer-events:none}
     .hero-inner{position:relative;min-height:660px;padding:88px 0 67px;display:grid;grid-template-columns:1.35fr .65fr;gap:60px;align-items:end}
     .hero h1{font-size:clamp(58px,8.7vw,126px);line-height:.84;letter-spacing:-7px;text-transform:uppercase;max-width:940px;margin:24px 0 31px}
     .hero h1 span{color:var(--green)}
     .hero-copy{max-width:625px;font-size:18px;color:#c6c6c6;margin-bottom:31px}
     .hero-actions{display:flex;align-items:center;gap:23px;flex-wrap:wrap}
     .hero-note{font-size:10px;letter-spacing:1.7px;text-transform:uppercase;color:#999}
-    .hero-panel{border:1px solid #333;padding:28px;background:rgba(255,255,255,.025)}
+    .hero-panel{border:1px solid rgba(255,255,255,.18);padding:30px;background:linear-gradient(145deg,rgba(255,255,255,.10),rgba(255,255,255,.025));backdrop-filter:blur(18px);box-shadow:0 30px 80px rgba(0,0,0,.35);position:relative;overflow:hidden}.hero-panel:after{content:"";position:absolute;width:120px;height:120px;border-radius:50%;right:-45px;top:-45px;background:var(--violet);filter:blur(50px);opacity:.26;pointer-events:none}
     .panel-number{font-size:68px;line-height:1;font-weight:900;letter-spacing:-4px;color:var(--green)}
     .hero-panel h2{font-size:22px;margin:17px 0 8px}
     .hero-panel p{font-size:14px;color:#aaa}
@@ -64,7 +64,7 @@
     .services{background:var(--soft)}
     .service-grid{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
     .service{background:white;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:31px;min-height:310px;display:flex;flex-direction:column;transition:.25s}
-    .service:hover{background:var(--black);color:white;transform:translateY(-4px)}
+    .service:hover{background:linear-gradient(145deg,#0b0b0b,#171717);color:white;transform:translateY(-7px);box-shadow:0 24px 50px rgba(0,0,0,.15)}
     .service:hover p{color:#aaa}.service:hover .icon{border-color:#555}.service:hover .icon svg{stroke:var(--green)}
     .service-head{display:flex;align-items:start;justify-content:space-between;margin-bottom:35px}
     .service-no{font-size:10px;font-weight:900;letter-spacing:1.5px;color:var(--grey)}
@@ -137,7 +137,7 @@
 <body>
 <header>
   <nav class="container">
-    <a class="brand" href="#top" aria-label="LOS home"><span class="brand-mark">LOS</span><span class="brand-name">Digital systems</span></a>
+    <a class="brand" href="#top" aria-label="LOS Design home"><span class="brand-mark">LOS</span><span class="brand-name">LOS Design</span></a>
     <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
     <ul class="navlinks">
       <li><a href="#services">Services</a></li><li><a href="#bookings">Bookings</a></li><li><a href="#why">Why LOS</a></li><li><a href="#contact">Start a project</a></li>
@@ -148,13 +148,13 @@
   <section class="hero">
     <div class="container hero-inner">
       <div>
-        <div class="eyebrow">Websites · Systems · Growth</div>
+        <div class="eyebrow">Design · Systems · Growth</div>
         <h1>Websites that work.<br><span>Systems that deliver.</span></h1>
-        <p class="hero-copy">LOS creates powerful websites, intelligent restaurant booking platforms and practical digital solutions for independent businesses across Manchester and Northern England.</p>
+        <p class="hero-copy">LOS Design creates powerful websites, intelligent restaurant booking platforms and practical digital solutions for independent businesses across Manchester and Northern England.</p>
         <div class="hero-actions"><a class="btn accent" href="#contact">Start your project <b>↗</b></a><span class="hero-note">Built around your business. Not a template.</span></div>
       </div>
       <aside class="hero-panel">
-        <div class="panel-number">01</div><h2>Your business. Better online.</h2>
+        <div class="panel-number">01</div><h2>Design that looks sharp. Systems that work hard.</h2>
         <p>One reliable point of contact for design, development, bookings, SEO, menus, print and everyday digital support.</p>
         <div class="hero-tags"><span>Mobile first</span><span>Restaurant systems</span><span>Local support</span><span>Built to grow</span></div>
       </aside>
@@ -162,9 +162,11 @@
   </section>
   <div class="capabilities"><div class="container cap-grid"><div class="cap">Web design</div><div class="cap">Smart bookings</div><div class="cap">SEO</div><div class="cap">Digital support</div></div></div>
 
+  <section style="padding:42px 0;background:#111;color:#fff;border-top:1px solid #242424;border-bottom:1px solid #242424"><div class="container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px"><div style="padding:18px;border:1px solid #2d2d2d"><b style="color:var(--green)">01</b><br><span style="font-size:12px;letter-spacing:1px;text-transform:uppercase">Premium visual design</span></div><div style="padding:18px;border:1px solid #2d2d2d"><b style="color:var(--violet)">02</b><br><span style="font-size:12px;letter-spacing:1px;text-transform:uppercase">Custom-built systems</span></div><div style="padding:18px;border:1px solid #2d2d2d"><b style="color:var(--cyan)">03</b><br><span style="font-size:12px;letter-spacing:1px;text-transform:uppercase">Restaurant technology</span></div><div style="padding:18px;border:1px solid #2d2d2d"><b style="color:#fff">04</b><br><span style="font-size:12px;letter-spacing:1px;text-transform:uppercase">Real ongoing support</span></div></div></section>
+
   <section class="services" id="services">
     <div class="container">
-      <div class="section-top reveal"><div><div class="eyebrow">What LOS delivers</div><h2>Everything your business needs online.</h2></div><p class="section-intro">Clear design, useful technology and ongoing support, brought together without unnecessary complexity.</p></div>
+      <div class="section-top reveal"><div><div class="eyebrow">What LOS Design delivers</div><h2>Everything your business needs online.</h2></div><p class="section-intro">Clear design, useful technology and ongoing support, brought together without unnecessary complexity.</p></div>
       <div class="service-grid">
         <article class="service reveal"><div class="service-head"><span class="service-no">01</span><div class="icon"><svg viewBox="0 0 32 32"><rect x="3" y="5" width="26" height="18"/><path d="M10 28h12M16 23v5M3 10h26"/></svg></div></div><h3>Website Design</h3><p>Distinctive, responsive websites built to present your business professionally and turn more visitors into enquiries or customers.</p><div class="mini-tags"><span>Design</span><span>Mobile</span><span>Performance</span></div></article>
         <article class="service reveal"><div class="service-head"><span class="service-no">02</span><div class="icon"><svg viewBox="0 0 32 32"><circle cx="14" cy="14" r="8"/><path d="m20 20 7 7M10 14h8M14 10v8"/></svg></div></div><h3>SEO & Visibility</h3><p>Local SEO, page improvements and focused content that help customers discover your business through Google.</p><div class="mini-tags"><span>Local SEO</span><span>Google</span><span>Content</span></div></article>
@@ -191,7 +193,7 @@
   </div></section>
 
   <section class="why" id="why"><div class="container why-grid">
-    <div class="reveal"><div class="eyebrow">Why LOS?</div><h2>Not another template.</h2><p class="why-copy">Good-looking design matters, but the website also needs to help the business. LOS combines visual design, technical development and practical support in one focused service.</p></div>
+    <div class="reveal"><div class="eyebrow">Why LOS Design?</div><h2>Not another template.</h2><p class="why-copy">Good-looking design matters, but the website also needs to help the business. LOS Design combines visual design, technical development and practical support in one focused service.</p></div>
     <div class="proof reveal">
       <div class="proof-row"><span class="proof-no">01</span><div><h3>Design with purpose</h3><p>Clean, distinctive work shaped around your brand and customers.</p></div></div>
       <div class="proof-row"><span class="proof-no">02</span><div><h3>Systems that solve problems</h3><p>Useful tools built around real operational needs, not empty features.</p></div></div>
@@ -206,7 +208,7 @@
   </div></section>
 
   <section class="contact" id="contact"><div class="container contact-grid">
-    <div class="reveal"><div class="eyebrow">Start your project</div><h2>Let's build something useful.</h2><p class="contact-copy">Tell me what your business needs help with. Your enquiry will open in your email app, ready to send directly to LOS.</p><a class="direct" href="mailto:fatoni.salihu@gmail.com">fatoni.salihu@gmail.com</a></div>
+    <div class="reveal"><div class="eyebrow">Start your project</div><h2>Let's build something useful.</h2><p class="contact-copy">Tell me what your business needs help with. Your enquiry will open in your email app, ready to send directly to LOS Design.</p><a class="direct" href="mailto:fatoni.salihu@gmail.com">fatoni.salihu@gmail.com</a></div>
     <form id="enquiryForm" class="reveal" novalidate>
       <div class="field"><label for="name">Your name</label><input id="name" name="name" autocomplete="name" required></div>
       <div class="field"><label for="business">Business name</label><input id="business" name="business" autocomplete="organization" required></div>
@@ -218,7 +220,7 @@
     </form>
   </div></section>
 </main>
-<footer><div class="container footer-inner"><span>© <span id="year"></span> LOS. All rights reserved.</span><span>Websites · Systems · Digital support</span></div></footer>
+<footer><div class="container footer-inner"><span>© <span id="year"></span> LOS Design. All rights reserved.</span><span>Websites · Systems · Digital support</span></div></footer>
 <script>
 (function(){
   const menuBtn=document.querySelector('.menu-btn'), nav=document.querySelector('.navlinks');
@@ -232,8 +234,8 @@
     e.preventDefault();
     if(!form.checkValidity()){status.textContent='Please complete all fields and enter a valid email address.';form.reportValidity();return}
     const val=id=>document.getElementById(id).value.trim();
-    const subject='LOS enquiry: '+val('service')+' - '+val('business');
-    const body=['Hello Faton,','','I would like to discuss a project with LOS.','','Name: '+val('name'),'Business: '+val('business'),'Email: '+val('email'),'Service: '+val('service'),'','Project details:',''+val('message'),'','Thanks,',val('name')].join('\n');
+    const subject='LOS Design enquiry: '+val('service')+' - '+val('business');
+    const body=['Hello Faton,','','I would like to discuss a project with LOS Design.','','Name: '+val('name'),'Business: '+val('business'),'Email: '+val('email'),'Service: '+val('service'),'','Project details:',''+val('message'),'','Thanks,',val('name')].join('\n');
     status.textContent='Your email application is opening now.';
     window.location.href='mailto:fatoni.salihu@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body);
   });
