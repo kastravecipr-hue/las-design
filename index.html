@@ -132,15 +132,44 @@
       form{grid-template-columns:1fr}.field{grid-column:1/-1}.footer-inner{align-items:flex-start;flex-direction:column}
     }
     @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}.service,.btn{transition:none}}
+  
+    /* Advanced LOS Design additions */
+    .rotating-word{display:inline-block;min-width:8.3ch;color:var(--green);transition:opacity .22s ease,transform .22s ease}
+    .rotating-word.swap{opacity:0;transform:translateY(12px)}
+    .need-bar{background:#fff;padding:28px 0;border-bottom:1px solid var(--line)}
+    .need-inner{display:flex;align-items:center;justify-content:space-between;gap:24px}
+    .need-title{font-size:13px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;white-space:nowrap}
+    .need-options{display:flex;gap:8px;flex-wrap:wrap;justify-content:flex-end}
+    .need-option{border:1px solid #bdbdb8;background:transparent;padding:11px 14px;font-size:10px;font-weight:900;letter-spacing:1px;text-transform:uppercase;transition:.2s}
+    .need-option:hover,.need-option.active{background:#000;color:#fff;border-color:#000;transform:translateY(-2px)}
+    .portfolio{background:#0a0a0a;color:#fff;overflow:hidden}
+    .portfolio .section-intro{color:#999}
+    .project-stage{display:grid;grid-template-columns:1.1fr .9fr;border:1px solid #2b2b2b;background:#111;min-height:530px}
+    .project-visual{position:relative;padding:52px;display:grid;place-items:center;overflow:hidden;background:radial-gradient(circle at 25% 20%,rgba(215,255,63,.13),transparent 28%),radial-gradient(circle at 80% 75%,rgba(167,139,250,.18),transparent 32%),#0b0b0b}
+    .browser{width:min(100%,680px);background:#f7f7f4;border:1px solid #4b4b4b;box-shadow:0 35px 90px rgba(0,0,0,.45);transform:perspective(1200px) rotateY(-5deg) rotateX(2deg);transition:.3s}
+    .project-stage:hover .browser{transform:perspective(1200px) rotateY(0) rotateX(0) translateY(-6px)}
+    .browser-top{height:31px;background:#e5e5e1;border-bottom:1px solid #ccc;display:flex;align-items:center;gap:6px;padding:0 12px}
+    .browser-top i{width:7px;height:7px;border-radius:50%;background:#999}.browser-top i:first-child{background:#111}.browser-top i:nth-child(2){background:#a78bfa}.browser-top i:nth-child(3){background:#d7ff3f}
+    .browser-page{min-height:330px;color:#080808;padding:32px;background:linear-gradient(120deg,#fff 60%,#ecece7 60%)}
+    .mock-nav{display:flex;justify-content:space-between;font-size:9px;font-weight:900;letter-spacing:1.2px}.mock-logo{font-size:18px}.mock-hero{padding-top:55px;max-width:440px}.mock-kicker{font-size:8px;letter-spacing:2px}.mock-hero h3{font-size:clamp(34px,5vw,62px);line-height:.88;letter-spacing:-3px;margin:13px 0}.mock-hero p{font-size:11px;color:#666;max-width:300px}.mock-btn{display:inline-block;background:#000;color:#fff;margin-top:18px;padding:10px 13px;font-size:8px;letter-spacing:1px}
+    .project-info{padding:52px;display:flex;flex-direction:column;justify-content:center}.project-badge{display:inline-flex;align-self:flex-start;color:#000;background:var(--green);padding:7px 9px;font-size:9px;font-weight:900;letter-spacing:1px;text-transform:uppercase}.project-info h3{font-size:42px;line-height:1;letter-spacing:-2px;margin:20px 0 15px}.project-info p{color:#999;font-size:14px;margin-bottom:25px}.project-list{list-style:none;border-top:1px solid #303030}.project-list li{padding:12px 0;border-bottom:1px solid #303030;font-size:11px;font-weight:800;letter-spacing:1px;text-transform:uppercase;display:flex;justify-content:space-between}.project-list li:after{content:'✓';color:var(--green)}
+    .hospitality{background:#eeeef0}.hospitality-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}.hospitality h2{font-size:clamp(46px,6vw,82px);line-height:.92;letter-spacing:-4px;margin:18px 0 23px}.hospitality-copy{color:var(--grey);margin-bottom:27px}.system-map{position:relative;display:grid;grid-template-columns:1fr 1fr;gap:12px}.system-node{background:#fff;border:1px solid #d2d2cd;padding:22px;min-height:124px;transition:.25s}.system-node:hover{background:#000;color:#fff;transform:translateY(-4px)}.system-node b{display:block;font-size:11px;letter-spacing:1px;text-transform:uppercase;margin-bottom:9px}.system-node p{font-size:12px;color:#777}.system-node strong{display:block;font-size:27px;color:var(--green);margin-bottom:10px}
+    .floating-cta{position:fixed;right:22px;bottom:22px;z-index:45;background:var(--green);color:#000;border:1px solid #000;padding:14px 17px;font-size:10px;font-weight:900;letter-spacing:1.3px;text-transform:uppercase;box-shadow:0 12px 35px rgba(0,0,0,.22);transition:.25s}.floating-cta:hover{background:#fff;transform:translateY(-3px)}
+    .cursor-glow{position:fixed;width:340px;height:340px;border-radius:50%;pointer-events:none;z-index:0;background:radial-gradient(circle,rgba(167,139,250,.09),transparent 65%);transform:translate(-50%,-50%);opacity:0;transition:opacity .3s}
+    @media(max-width:900px){.project-stage,.hospitality-grid{grid-template-columns:1fr}.project-info{padding:38px}.hospitality-grid{gap:45px}.need-inner{align-items:flex-start;flex-direction:column}.need-options{justify-content:flex-start}.cursor-glow{display:none}}
+    @media(max-width:620px){.rotating-word{min-width:0}.project-visual{padding:24px}.browser-page{min-height:270px;padding:22px}.mock-hero{padding-top:40px}.project-info{padding:29px}.project-info h3{font-size:34px}.system-map{grid-template-columns:1fr}.floating-cta{right:13px;bottom:13px;padding:13px}.need-option{flex:1 1 calc(50% - 8px)}.hospitality h2{letter-spacing:-2.6px}}
+
   </style>
 </head>
 <body>
+<div class="cursor-glow" id="cursorGlow"></div>
+<a class="floating-cta" href="#contact">Start a project ↗</a>
 <header>
   <nav class="container">
     <a class="brand" href="#top" aria-label="LOS Design home"><span class="brand-mark">LOS</span><span class="brand-name">LOS Design</span></a>
     <button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button>
     <ul class="navlinks">
-      <li><a href="#services">Services</a></li><li><a href="#bookings">Bookings</a></li><li><a href="#why">Why LOS</a></li><li><a href="#contact">Start a project</a></li>
+      <li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#hospitality">Hospitality</a></li><li><a href="#why">Why LOS</a></li><li><a href="#contact">Start a project</a></li>
     </ul>
   </nav>
 </header>
@@ -149,8 +178,8 @@
     <div class="container hero-inner">
       <div>
         <div class="eyebrow">Design · Systems · Growth</div>
-        <h1>Websites that work.<br><span>Systems that deliver.</span></h1>
-        <p class="hero-copy">LOS Design creates powerful websites, intelligent restaurant booking platforms and practical digital solutions for independent businesses across Manchester and Northern England.</p>
+        <h1>Design. Build.<br><span class="rotating-word" id="rotatingWord">Websites.</span></h1>
+        <p class="hero-copy">LOS Design creates premium websites, intelligent restaurant booking platforms and practical digital solutions for independent businesses across Manchester and Northern England.</p>
         <div class="hero-actions"><a class="btn accent" href="#contact">Start your project <b>↗</b></a><span class="hero-note">Built around your business. Not a template.</span></div>
       </div>
       <aside class="hero-panel">
@@ -161,6 +190,18 @@
     </div>
   </section>
   <div class="capabilities"><div class="container cap-grid"><div class="cap">Web design</div><div class="cap">Smart bookings</div><div class="cap">SEO</div><div class="cap">Digital support</div></div></div>
+  <div class="need-bar">
+    <div class="container need-inner">
+      <div class="need-title">What do you need?</div>
+      <div class="need-options" aria-label="Choose a service">
+        <button type="button" class="need-option" data-service="New website">New website</button>
+        <button type="button" class="need-option" data-service="Advanced booking platform">Booking system</button>
+        <button type="button" class="need-option" data-service="SEO and Google visibility">SEO help</button>
+        <button type="button" class="need-option" data-service="Menu updates or design">Menu design</button>
+        <button type="button" class="need-option" data-service="IT and digital support">Digital support</button>
+      </div>
+    </div>
+  </div>
 
   <section style="padding:42px 0;background:#111;color:#fff;border-top:1px solid #242424;border-bottom:1px solid #242424"><div class="container" style="display:grid;grid-template-columns:repeat(auto-fit,minmax(180px,1fr));gap:14px"><div style="padding:18px;border:1px solid #2d2d2d"><b style="color:var(--green)">01</b><br><span style="font-size:12px;letter-spacing:1px;text-transform:uppercase">Premium visual design</span></div><div style="padding:18px;border:1px solid #2d2d2d"><b style="color:var(--violet)">02</b><br><span style="font-size:12px;letter-spacing:1px;text-transform:uppercase">Custom-built systems</span></div><div style="padding:18px;border:1px solid #2d2d2d"><b style="color:var(--cyan)">03</b><br><span style="font-size:12px;letter-spacing:1px;text-transform:uppercase">Restaurant technology</span></div><div style="padding:18px;border:1px solid #2d2d2d"><b style="color:#fff">04</b><br><span style="font-size:12px;letter-spacing:1px;text-transform:uppercase">Real ongoing support</span></div></div></section>
 
@@ -177,6 +218,32 @@
       </div>
     </div>
   </section>
+
+
+  <section class="portfolio" id="work">
+    <div class="container">
+      <div class="section-top reveal"><div><div class="eyebrow">Selected capability</div><h2>Designed to look good. Built to do more.</h2></div><p class="section-intro">A visual direction for independent businesses that need strong design and serious functionality in the same place.</p></div>
+      <div class="project-stage reveal">
+        <div class="project-visual">
+          <div class="browser">
+            <div class="browser-top"><i></i><i></i><i></i></div>
+            <div class="browser-page"><div class="mock-nav"><span class="mock-logo">LOS DESIGN</span><span>WORK&nbsp;&nbsp; SERVICES&nbsp;&nbsp; CONTACT</span></div><div class="mock-hero"><div class="mock-kicker">DIGITAL DESIGN STUDIO</div><h3>Ideas made visible.</h3><p>Premium web design and custom systems created around the way your business works.</p><span class="mock-btn">VIEW THE WORK ↗</span></div></div>
+          </div>
+        </div>
+        <div class="project-info"><span class="project-badge">Featured direction</span><h3>Hospitality, made digital.</h3><p>A complete customer and staff experience, from the first Google search to booking, arrival and ongoing restaurant management.</p><ul class="project-list"><li>Premium responsive website</li><li>Advanced booking technology</li><li>Search visibility and SEO</li><li>Menus, vouchers and print</li></ul></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="hospitality" id="hospitality"><div class="container hospitality-grid">
+    <div class="reveal"><div class="eyebrow">Built for hospitality</div><h2>One connected restaurant experience.</h2><p class="hospitality-copy">LOS Design understands that a restaurant website is not just a brochure. It should help customers discover the venue, make a booking, receive confirmation and arrive with confidence, while giving staff practical tools behind the scenes.</p><a class="btn" href="#contact" data-preset="Advanced booking platform">Build my restaurant system <b>↗</b></a></div>
+    <div class="system-map reveal">
+      <div class="system-node"><strong>01</strong><b>Discover</b><p>Fast pages, clear menus and local Google visibility.</p></div>
+      <div class="system-node"><strong>02</strong><b>Book</b><p>Live availability, cover rules and alternative times.</p></div>
+      <div class="system-node"><strong>03</strong><b>Allocate</b><p>Smart tables, combinations and occupancy controls.</p></div>
+      <div class="system-node"><strong>04</strong><b>Manage</b><p>Confirmations, staff controls, check-in and check-out.</p></div>
+    </div>
+  </div></section>
 
   <section class="booking" id="bookings"><div class="container booking-grid">
     <div class="reveal"><div class="eyebrow">The standout service</div><h2>Smarter restaurant bookings.</h2><p class="booking-copy">Give customers live availability while giving your team the controls needed to manage tables, reservations and service confidently. The platform can be shaped around your restaurant rather than forcing your restaurant around generic software.</p><a class="btn light" href="#contact">Discuss your system <b>↗</b></a></div>
@@ -229,6 +296,17 @@
   document.getElementById('year').textContent=new Date().getFullYear();
   const items=document.querySelectorAll('.reveal');
   if('IntersectionObserver' in window){const ob=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ob.unobserve(e.target)}}),{threshold:.08});items.forEach(i=>ob.observe(i))}else{items.forEach(i=>i.classList.add('visible'))}
+
+  const rotating=document.getElementById('rotatingWord');
+  const words=['Websites.','Bookings.','SEO.','Systems.'];
+  let wordIndex=0;
+  if(rotating && !window.matchMedia('(prefers-reduced-motion: reduce)').matches){setInterval(()=>{rotating.classList.add('swap');setTimeout(()=>{wordIndex=(wordIndex+1)%words.length;rotating.textContent=words[wordIndex];rotating.classList.remove('swap')},220)},2200)}
+  const serviceSelect=document.getElementById('service');
+  document.querySelectorAll('[data-service]').forEach(btn=>btn.addEventListener('click',()=>{document.querySelectorAll('.need-option').forEach(b=>b.classList.remove('active'));if(btn.classList.contains('need-option'))btn.classList.add('active');if(serviceSelect){serviceSelect.value=btn.dataset.service;document.getElementById('contact').scrollIntoView({behavior:'smooth'});setTimeout(()=>serviceSelect.focus(),500)}}));
+  document.querySelectorAll('[data-preset]').forEach(link=>link.addEventListener('click',()=>{if(serviceSelect)serviceSelect.value=link.dataset.preset}));
+  const glow=document.getElementById('cursorGlow');
+  if(glow && window.matchMedia('(pointer:fine)').matches){document.addEventListener('mousemove',e=>{glow.style.left=e.clientX+'px';glow.style.top=e.clientY+'px';glow.style.opacity='1'})}
+
   const form=document.getElementById('enquiryForm'), status=document.getElementById('formMessage');
   form.addEventListener('submit',e=>{
     e.preventDefault();
