@@ -146,11 +146,134 @@ section{padding:66px 0}.section-top{display:flex;justify-content:space-between;a
 @media(max-width:900px){.booking-grid{grid-template-columns:1fr;gap:27px}.feature-grid{grid-template-columns:repeat(3,1fr)}.menu-design-grid{gap:27px}.menu-before-after{min-height:360px;max-width:650px}.menu-sheet{min-height:330px}}
 @media(max-width:620px){.booking{padding:39px 0}.booking h2{font-size:39px}.feature-grid{grid-template-columns:1fr 1fr}.feature{min-height:88px}.menu-design{padding:39px 0}.menu-copy h2{font-size:37px}.menu-before-after{grid-template-columns:1fr;min-height:0}.menu-sheet{min-height:330px}.menu-arrow{transform:rotate(90deg)}}
 
+
+/* =========================================================
+   LOS HOMEPAGE - FINAL MOBILE FIXES
+   These rules intentionally sit last so they override older
+   responsive experiments without changing desktop styling.
+   ========================================================= */
+@media (max-width: 620px){
+  html,body{max-width:100%;overflow-x:hidden}
+  .container{width:92%}
+  header{backdrop-filter:none}
+  nav{height:62px}
+  .brand-mark{width:40px;height:40px;border-radius:10px;font-size:13px}
+  .navlinks{inset:62px 0 auto;padding:25px 4%;gap:22px;max-height:calc(100vh - 62px);overflow-y:auto}
+  .navlinks a{font-size:11px;padding:2px 0}
+
+  /* Hero: one clear image card, no duplicated background image */
+  .hero:before{background:linear-gradient(180deg,rgba(255,255,255,.9),rgba(242,242,239,.97))}
+  .hero:after{display:none}
+  .hero-inner{display:block;padding:35px 0 30px}
+  .hero h1{font-size:clamp(43px,13vw,53px);line-height:.88;letter-spacing:-3px;margin:15px 0 18px;overflow-wrap:anywhere}
+  .rotating-word{display:block;min-width:0}
+  .hero-copy{font-size:14px;line-height:1.55;margin-bottom:19px}
+  .hero-actions{display:grid;gap:11px}
+  .hero-actions .btn{width:100%}
+  .hero-note{font-size:8px;line-height:1.45;text-align:center}
+  .hero-panel{margin-top:26px;width:100%;box-shadow:0 15px 35px rgba(0,0,0,.12)}
+  .hero-panel-image{height:175px}
+  .hero-panel-content{padding:17px}
+  .hero-panel h2{font-size:18px}
+  .hero-panel p{font-size:12px}
+  .hero-tags{gap:5px;margin-top:12px}
+  .hero-tags span{font-size:7px;padding:5px 6px}
+
+  /* Main service introduction */
+  .los-offer{padding:40px 0}
+  .offer-heading{display:block;margin-bottom:20px}
+  .offer-heading h2{font-size:35px;line-height:.95;letter-spacing:-2.2px;margin-top:10px}
+  .offer-heading>p{font-size:12px;margin-top:13px}
+  .offer-grid{display:block;border-left:1px solid var(--line)}
+  .offer-card{min-height:0;padding:19px}
+  .offer-icon{width:40px;height:40px;margin-bottom:16px}
+  .offer-card h3{font-size:19px}
+  .offer-card p{font-size:11px;margin-bottom:15px}
+
+  /* Three service rows */
+  .services-lite{padding:40px 0}
+  .section-top{margin-bottom:22px}
+  .section-top h2{font-size:35px!important;line-height:.95;letter-spacing:-2.2px!important}
+  .section-intro{font-size:12px}
+  .service-row,.hospitality-row{display:grid;grid-template-columns:35px 1fr;gap:10px;padding:19px 0}
+  .row-no{grid-column:1;grid-row:1;padding-top:10px}
+  .row-icon{grid-column:2;grid-row:1;width:40px;height:40px}
+  .row-copy,.row-image,.row-link{grid-column:2}
+  .row-copy h3{font-size:24px;letter-spacing:-1px}
+  .row-copy p{font-size:11px}
+  .row-image{width:100%;height:105px}
+  .row-link{width:100%;max-width:none;min-width:0}
+
+  /* Selected capability */
+  .portfolio-compact{padding:36px 0}
+  .featured-strip{display:block}
+  .featured-image{min-height:190px;max-height:210px}
+  .featured-copy{padding:21px}
+  .featured-copy h2{font-size:34px;letter-spacing:-2px}
+  .featured-copy p{font-size:11px}
+
+  /* Website section */
+  .website-focus{padding:40px 0}
+  .website-focus-grid{display:block}
+  .website-photo{min-height:205px;max-height:225px;margin-bottom:25px}
+  .website-content h2{font-size:36px;line-height:.94;letter-spacing:-2.3px}
+  .website-lead{font-size:12px;margin-bottom:18px}
+  .website-options{display:block}
+  .website-option{min-height:0;padding:18px}
+  .website-note{font-size:10px}
+
+  /* Booking preview */
+  .booking{padding:39px 0}
+  .booking-grid{display:block}
+  .booking h2{font-size:37px;line-height:.94;letter-spacing:-2.2px;margin:10px 0 14px}
+  .booking-copy{font-size:12px;margin-bottom:17px}
+  .booking .btn{width:100%;margin-bottom:24px}
+  .feature-grid{grid-template-columns:1fr}
+  .feature{min-height:0;padding:13px 14px}
+
+  /* Menu section: keep mock menus readable without sideways overflow */
+  .menu-design{padding:39px 0}
+  .menu-design-grid{display:block}
+  .menu-copy h2{font-size:36px;line-height:.94;letter-spacing:-2.2px}
+  .menu-lead{font-size:12px}
+  .menu-copy .btn{width:100%;margin-bottom:24px}
+  .menu-before-after{display:block;min-height:0;padding:14px}
+  .menu-sheet{width:100%;min-height:325px;padding:20px 16px;overflow:hidden}
+  .menu-arrow{transform:none;padding:8px 0;font-size:0}
+  .menu-arrow:after{content:"↓";font-size:20px;color:var(--orange)}
+  .old-menu,.new-menu{transform:none}
+  .old-menu p{font-size:5.6px;line-height:1.6;white-space:normal;word-break:break-word}
+  .new-footer{position:static;margin-top:18px}
+
+  /* Process and form */
+  .process{padding:39px 0}
+  .steps{grid-template-columns:1fr}
+  .step{min-height:0;padding:18px}
+  .step h3{margin:12px 0 5px}
+  .contact{padding:42px 0}
+  .contact-grid{display:block}
+  .contact h2{font-size:38px!important;line-height:.94;letter-spacing:-2.2px!important}
+  .contact-copy{font-size:12px}
+  form{margin-top:25px;display:block}
+  .field{margin-bottom:12px}
+  .field.full{grid-column:auto}
+  .field .btn{width:100%}
+  .form-note,.form-message{display:block;margin-top:8px}
+  .footer-inner{gap:7px}
+  .floating-cta{display:none}
+}
+
+@media (max-width: 380px){
+  .hero h1{font-size:41px}
+  .offer-heading h2,.section-top h2{font-size:32px!important}
+  .website-content h2,.booking h2,.menu-copy h2,.contact h2{font-size:34px!important}
+}
+
 </style>
 </head>
 <body>
 <a class="floating-cta" href="#contact">Start a project ↗</a>
-<header><nav class="container"><a class="brand" href="#top"><span class="brand-mark">LOS</span><span class="brand-name">LOS Design</span></a><button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button><ul class="navlinks"><li><a class="active" href="index.html" aria-current="page">Home</a></li><li><a href="booking-system.html">Booking</a></li><li><a href="#web-design">Web Design</a></li><li><a href="#menu-design">Menu Design</a></li><li><a href="#contact">Contact</a></li></ul></nav></header>
+<header><nav class="container"><a class="brand" href="#top"><span class="brand-mark">LOS</span><span class="brand-name">LOS Design</span></a><button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button><ul class="navlinks"><li><a class="active" href="index.html" aria-current="page">Home</a></li><li><a href="booking-system.html">Booking</a></li><li><a href="web-design.html">Web Design</a></li><li><a href="#menu-design">Menu Design</a></li><li><a href="#contact">Contact</a></li></ul></nav></header>
 <main id="top">
 <section class="hero"><div class="container hero-inner"><div><div class="eyebrow">Design · Systems · Growth</div><h1>Design.<br><span class="rotating-word" id="rotatingWord">Websites.</span></h1><p class="hero-copy">Websites, booking systems and practical digital support for independent businesses.</p><div class="hero-actions"><a class="btn accent" href="#contact">Start your project ↗</a><span class="hero-note">Built around your business. Not a template.</span></div></div><aside class="hero-panel"><div class="hero-panel-image"><img src="los-restaurant-interior.jpg" alt="Elegant restaurant interior"><span class="image-label">Hospitality design · LOS</span></div><div class="hero-panel-content"><h2>Design that looks sharp. Systems that work hard.</h2><p>Web design, booking systems and digital support in one place.</p><div class="hero-tags"><span>Mobile first</span><span>Restaurant systems</span><span>Local support</span><span>Built to grow</span></div></div></aside></div></section>
 <section class="los-offer" aria-label="LOS Design services">
