@@ -87,6 +87,42 @@ header{position:sticky;top:0;z-index:100;background:#fbfaf7;border-bottom:1px so
 }
 
 </style><style>.reveal{opacity:1!important;transform:none!important}</style>
+
+<style>
+
+/* LOS web design mobile polish */
+@media(max-width:620px){
+ .container{width:92%}section{padding:34px 0!important}.eyebrow{font-size:8px!important;letter-spacing:1.5px!important}
+ .hero,.web-hero{padding:34px 0!important;min-height:0!important}.hero-grid,.hero-inner{gap:22px!important}.hero h1,.web-hero h1{font-size:40px!important;line-height:.9!important;letter-spacing:-2.6px!important;margin:12px 0 14px!important}.lead,.hero-copy{font-size:12px!important;line-height:1.5!important}
+ .device-stage,.hero-visual{min-height:230px!important}.browser,.device{transform:none!important}.phone{transform:scale(.78)!important;transform-origin:bottom right!important}
+ .section-head h2,.section-top h2,.care h2,.seo h2,.health h2,.content h2{font-size:33px!important;line-height:.95!important;letter-spacing:-2px!important}.section-head p,.section-intro{font-size:10.5px!important;line-height:1.5!important}
+ .choice-grid,.care-grid,.seo-grid,.health-grid,.content-grid{grid-template-columns:1fr!important}.choice-card,.care-card,.seo-card,.health-card,.content-card{padding:16px!important;min-height:0!important}.choice-card p,.care-card p,.seo-card p,.health-card p,.content-card p{font-size:10px!important;line-height:1.45!important}.chips,.tags,.mini-tags{display:none!important}
+ .care-card h3,.seo-card h3,.health-card h3,.content-card h3{font-size:18px!important}.icon,.card-icon{width:40px!important;height:40px!important}
+ .contact-grid{grid-template-columns:1fr!important;gap:22px!important}.contact h2{font-size:34px!important}.contact p{font-size:10.5px!important}.mini-form,form{padding:14px!important;gap:11px!important}textarea{min-height:100px!important}.btn{min-height:43px!important}
+}
+@media(max-width:380px){.hero h1,.web-hero h1{font-size:36px!important}.brand-name{font-size:9px!important}}
+
+
+/* Restaurant-image CTA */
+.cta{
+  position:relative;
+  isolation:isolate;
+  overflow:hidden;
+  padding:68px 0;
+  background:
+    linear-gradient(rgba(232,100,34,.84),rgba(232,100,34,.88)),
+    url("los-web-restaurant.jpg") center 52%/cover no-repeat;
+}
+.cta:after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(90deg,rgba(0,0,0,.04),transparent 35%,rgba(0,0,0,.08));pointer-events:none}
+.cta .container{position:relative;z-index:1}
+.cta h2{max-width:900px;text-shadow:0 1px 0 rgba(255,255,255,.05)}
+.cta p{max-width:650px}
+@media(max-width:620px){
+  .cta{padding:48px 0;background-position:center center}
+  .cta h2{font-size:36px;letter-spacing:-2px}
+  .cta p{font-size:12px;line-height:1.5;margin:14px auto 19px}
+}
+</style>
 </head>
 <body>
 <header><nav class="container"><a class="brand" href="index.html#top"><span class="brand-mark">LOS</span><span class="brand-name">LOS Design</span></a><button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button><ul class="navlinks navlinks-simple"><li class="services-nav"><button class="services-toggle" type="button" aria-expanded="false">Services <span>⌄</span></button><div class="services-menu"><a href="web-design.html"><b>Web Design & Care</b><small>Build · redesign · SEO · updates</small></a><a href="booking-system.html"><b>Smart Booking</b><small>Bookings · tables · restaurant control</small></a><a href="index.html#menu-design"><b>Menu Design</b><small>Refresh · prices · print</small></a><a href="index.html#social"><b>Social Media</b><small>Facebook · Instagram · TikTok</small></a><a href="index.html#restaurant-control"><b>Vouchers & Payments</b><small>Digital vouchers · flexible checkout</small></a></div></li><li><a href="#about">How I work</a></li><li><a href="#about">Meet Faton</a></li><li><a class="nav-quote" href="index.html#contact"><span class="quote-icon">↗</span> Get a quote</a></li></ul></nav></header>
@@ -102,16 +138,3 @@ header{position:sticky;top:0;z-index:100;background:#fbfaf7;border-bottom:1px so
 <script>(()=>{const mb=document.querySelector('.menu-btn'),nav=document.querySelector('.navlinks');mb.addEventListener('click',()=>{const o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',String(o))});nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>nav.classList.remove('open')));document.getElementById('year').textContent=new Date().getFullYear();const rs=document.querySelectorAll('.reveal');if('IntersectionObserver'in window){const ob=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');ob.unobserve(e.target)}}),{threshold:.08});rs.forEach(x=>ob.observe(x))}else rs.forEach(x=>x.classList.add('visible'));const f=document.getElementById('webForm'),m=document.getElementById('formMsg');f.addEventListener('submit',e=>{e.preventDefault();if(!f.checkValidity()){m.textContent='Please complete the required fields.';f.reportValidity();return}const v=id=>document.getElementById(id).value.trim();const subject='LOS Website enquiry - '+v('service')+' - '+v('business');const body=['Hello Faton,','','I would like to discuss '+v('service')+'.','','Name: '+v('name'),'Business: '+v('business'),'Email: '+v('email'),'','Details:',v('message'),'','Thanks,',v('name')].join('\n');m.textContent='Your email application is opening now.';location.href='mailto:fatoni.salihu@gmail.com?subject='+encodeURIComponent(subject)+'&body='+encodeURIComponent(body)})})();</script>
 <script>(function(){const mb=document.querySelector('.menu-btn'),nav=document.querySelector('.navlinks-simple');if(mb&&nav){mb.addEventListener('click',()=>{const o=nav.classList.toggle('open');mb.setAttribute('aria-expanded',String(o));document.body.classList.toggle('menu-open',o)})}const sn=document.querySelector('.services-nav'),st=document.querySelector('.services-toggle');if(sn&&st){st.addEventListener('click',e=>{e.stopPropagation();const o=sn.classList.toggle('open');st.setAttribute('aria-expanded',String(o))});document.addEventListener('click',e=>{if(!sn.contains(e.target)){sn.classList.remove('open');st.setAttribute('aria-expanded','false')}})}const f=document.getElementById('enquiryForm'),msg=document.getElementById('formMsg')||document.getElementById('formMessage');if(f){f.addEventListener('submit',async e=>{e.preventDefault();if(!f.checkValidity()){if(msg)msg.textContent='Please complete the required fields.';f.reportValidity();return}const btn=f.querySelector('button[type="submit"]');btn.disabled=true;btn.textContent='SENDING...';try{const r=await fetch('https://api.web3forms.com/submit',{method:'POST',body:new FormData(f)}),j=await r.json();if(j.success){if(msg)msg.textContent='Thanks. Your enquiry has been sent to LOS Design. I’ll be in touch soon. ✓';f.reset()}else throw new Error()}catch(x){if(msg)msg.textContent='Something went wrong. Please email fatoni.salihu@gmail.com.'}finally{btn.disabled=false;btn.textContent='SEND ENQUIRY ↗'}})} })();</script>
 </body></html>
-<style>
-/* LOS web design mobile polish */
-@media(max-width:620px){
- .container{width:92%}section{padding:34px 0!important}.eyebrow{font-size:8px!important;letter-spacing:1.5px!important}
- .hero,.web-hero{padding:34px 0!important;min-height:0!important}.hero-grid,.hero-inner{gap:22px!important}.hero h1,.web-hero h1{font-size:40px!important;line-height:.9!important;letter-spacing:-2.6px!important;margin:12px 0 14px!important}.lead,.hero-copy{font-size:12px!important;line-height:1.5!important}
- .device-stage,.hero-visual{min-height:230px!important}.browser,.device{transform:none!important}.phone{transform:scale(.78)!important;transform-origin:bottom right!important}
- .section-head h2,.section-top h2,.care h2,.seo h2,.health h2,.content h2{font-size:33px!important;line-height:.95!important;letter-spacing:-2px!important}.section-head p,.section-intro{font-size:10.5px!important;line-height:1.5!important}
- .choice-grid,.care-grid,.seo-grid,.health-grid,.content-grid{grid-template-columns:1fr!important}.choice-card,.care-card,.seo-card,.health-card,.content-card{padding:16px!important;min-height:0!important}.choice-card p,.care-card p,.seo-card p,.health-card p,.content-card p{font-size:10px!important;line-height:1.45!important}.chips,.tags,.mini-tags{display:none!important}
- .care-card h3,.seo-card h3,.health-card h3,.content-card h3{font-size:18px!important}.icon,.card-icon{width:40px!important;height:40px!important}
- .contact-grid{grid-template-columns:1fr!important;gap:22px!important}.contact h2{font-size:34px!important}.contact p{font-size:10.5px!important}.mini-form,form{padding:14px!important;gap:11px!important}textarea{min-height:100px!important}.btn{min-height:43px!important}
-}
-@media(max-width:380px){.hero h1,.web-hero h1{font-size:36px!important}.brand-name{font-size:9px!important}}
-</style>
