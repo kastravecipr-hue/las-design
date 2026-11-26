@@ -10,38 +10,304 @@
 *{box-sizing:border-box;margin:0;padding:0}
 :root{--black:#111;--grey:#696969;--line:#d2d2ce;--soft:#eeeeeb;--white:#fff;--orange:#e86422}
 html{scroll-behavior:smooth}body{font-family:Arial,Helvetica,sans-serif;color:var(--black);background:#fff;line-height:1.45;overflow-x:hidden}body.menu-open{overflow:hidden}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button{cursor:pointer}.container{width:min(1160px,90%);margin:auto}.eyebrow{display:flex;align-items:center;gap:12px;font-size:10px;font-weight:900;letter-spacing:2.2px;text-transform:uppercase}.eyebrow:before{content:"";width:32px;height:1px;background:currentColor}.btn{display:inline-flex;align-items:center;justify-content:center;gap:18px;min-height:49px;padding:0 22px;border:1px solid #111;background:#111;color:#fff;font-size:10px;font-weight:900;letter-spacing:1.5px;text-transform:uppercase;transition:.25s}.btn:hover{background:#fff;color:#111;transform:translateY(-2px)}.btn.accent{background:var(--orange);color:#111;border-color:var(--orange)}.btn.light{background:#fff;color:#111;border-color:#fff}.btn.light:hover{background:transparent;color:#fff}
-header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid #ddd}nav{height:66px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:13px}.brand-mark{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:#151515;color:#fff;font-size:15px;font-weight:900}.brand-name{font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase}.navlinks{display:flex;gap:28px;align-items:center;list-style:none;font-size:10px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase}.navlinks a:hover{opacity:.5}.menu-btn{display:none;border:0;background:none;width:42px;height:42px;position:relative}.menu-btn span,.menu-btn:before,.menu-btn:after{content:"";position:absolute;left:8px;width:26px;height:2px;background:#000}.menu-btn:before{top:13px}.menu-btn span{top:20px}.menu-btn:after{top:27px}
+header{position:sticky;top:0;z-index:50;background:rgba(255,255,255,.95);backdrop-filter:blur(12px);border-bottom:1px solid #ddd}nav{height:66px;display:flex;align-items:center;justify-content:space-between}.brand{display:flex;align-items:center;gap:13px}.brand-mark{width:44px;height:44px;border-radius:12px;display:grid;place-items:center;background:#151515;color:#fff;font-size:15px;font-weight:900}.brand-name{font-size:11px;font-weight:900;letter-spacing:2px;text-transform:uppercase;white-space:nowrap}.navlinks{display:flex;gap:28px;align-items:center;list-style:none;font-size:10px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase}.navlinks a{position:relative;padding:25px 0}.navlinks a:hover{opacity:.55}.navlinks a.active:after{content:"";position:absolute;left:0;right:0;bottom:17px;height:2px;background:var(--orange)}.menu-btn{display:none;border:0;background:none;width:42px;height:42px;position:relative}.menu-btn span,.menu-btn:before,.menu-btn:after{content:"";position:absolute;left:8px;width:26px;height:2px;background:#000}.menu-btn:before{top:13px}.menu-btn span{top:20px}.menu-btn:after{top:27px}
 .hero{position:relative;overflow:hidden;background:#f2f2ef}.hero:before{content:"";position:absolute;inset:0;background:linear-gradient(110deg,rgba(255,255,255,.82),rgba(242,242,239,.7) 55%,transparent 72%);z-index:1;pointer-events:none}.hero:after{content:"";position:absolute;right:0;top:0;width:45%;height:100%;background:url("los-restaurant-interior.jpg") center/cover no-repeat;filter:grayscale(1) brightness(1.2) contrast(.78);opacity:.28}.hero-inner{position:relative;z-index:2;min-height:520px;padding:55px 0 45px;display:grid;grid-template-columns:1.22fr .78fr;gap:42px;align-items:center}.hero h1{font-size:clamp(54px,7.4vw,105px);line-height:.84;letter-spacing:-6px;text-transform:uppercase;margin:18px 0 23px}.hero h1 span{color:var(--orange)}.hero-copy{max-width:540px;font-size:16px;color:#555;margin-bottom:24px}.hero-actions{display:flex;gap:18px;align-items:center;flex-wrap:wrap}.hero-note{font-size:9px;letter-spacing:1.5px;text-transform:uppercase;color:#666}.hero-panel{background:#fff;border:1px solid rgba(0,0,0,.15);box-shadow:0 24px 60px rgba(0,0,0,.16);overflow:hidden}.hero-panel-image{height:215px;position:relative;overflow:hidden}.hero-panel-image img{width:100%;height:100%;display:block;object-fit:cover;filter:grayscale(1) brightness(1.18) contrast(.78);transition:.5s}.hero-panel:hover img{transform:scale(1.035)}.image-label{position:absolute;left:14px;bottom:14px;background:rgba(0,0,0,.8);color:#fff;padding:7px 9px;font-size:8px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase}.hero-panel-content{padding:21px}.hero-panel h2{font-size:20px;line-height:1.15;margin-bottom:7px}.hero-panel p{font-size:13px;color:#666}.hero-tags{display:flex;flex-wrap:wrap;gap:6px;margin-top:15px}.hero-tags span{border:1px solid #aaa;padding:6px 8px;font-size:8px;font-weight:900;letter-spacing:.8px;text-transform:uppercase}
 .gallery{background:#111}.gallery-grid{display:grid;grid-template-columns:1.35fr .825fr .825fr;height:235px}.gallery figure{position:relative;overflow:hidden;border-right:1px solid rgba(255,255,255,.18)}.gallery figure:last-child{border:0}.gallery img{width:100%;height:100%;display:block;object-fit:cover;filter:grayscale(1) brightness(1.2) contrast(.78);opacity:.88;transition:.45s}.gallery figure:hover img{transform:scale(1.04);opacity:1}.gallery figure:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.67),transparent 58%)}.gallery figcaption{position:absolute;z-index:2;left:18px;bottom:15px;color:#fff;font-size:9px;font-weight:900;letter-spacing:1.3px;text-transform:uppercase}.gallery figcaption span{color:var(--orange);margin-right:8px}.capabilities{background:#dededb;border-bottom:1px solid #bbb}.cap-grid{display:grid;grid-template-columns:repeat(4,1fr)}.cap{padding:16px;border-right:1px solid rgba(0,0,0,.24);text-align:center;font-size:9px;font-weight:900;letter-spacing:1.6px;text-transform:uppercase}.cap:last-child{border:0}.need-bar{padding:18px 0;border-bottom:1px solid var(--line)}.need-inner{display:flex;justify-content:space-between;align-items:center;gap:22px}.need-title{font-size:12px;font-weight:900;letter-spacing:1.4px;text-transform:uppercase;white-space:nowrap}.need-options{display:flex;gap:7px;flex-wrap:wrap;justify-content:flex-end}.need-option{background:none;border:1px solid #bbb;padding:9px 12px;font-size:9px;font-weight:900;letter-spacing:.9px;text-transform:uppercase}.need-option:hover,.need-option.active{background:#111;color:#fff;border-color:#111}
 section{padding:66px 0}.section-top{display:flex;justify-content:space-between;align-items:end;gap:35px;margin-bottom:34px}.section-top h2,.booking h2,.why h2,.hospitality h2,.contact h2{font-size:clamp(38px,5vw,66px);line-height:.94;letter-spacing:-3.5px;margin-top:13px}.section-intro{max-width:360px;color:var(--grey);font-size:14px}.services,.process,.hospitality{background:var(--soft)}.service-grid{display:grid;grid-template-columns:repeat(3,1fr);border-left:1px solid var(--line);border-top:1px solid var(--line)}.service{background:#fff;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:25px;min-height:265px;display:flex;flex-direction:column;transition:.25s}.service:hover{background:#131313;color:#fff;transform:translateY(-5px)}.service:hover p{color:#aaa}.service-head{display:flex;justify-content:space-between;margin-bottom:24px}.service-no{font-size:9px;font-weight:900;color:#777}.icon{width:48px;height:48px;border:1px solid var(--line);display:grid;place-items:center;font-size:20px}.service h3{font-size:21px;margin-bottom:9px}.service p{font-size:13px;color:var(--grey);margin-bottom:18px}.mini-tags{margin-top:auto;display:flex;flex-wrap:wrap;gap:5px}.mini-tags span{font-size:8px;font-weight:900;letter-spacing:.7px;text-transform:uppercase;border:1px solid currentColor;padding:5px 7px;opacity:.75}
 .booking,.portfolio,.contact{background:#111;color:#fff}.booking-grid,.contact-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px}.booking-copy,.contact-copy{color:#aaa;margin:18px 0 24px;max-width:500px}.feature-grid{display:grid;grid-template-columns:1fr 1fr;border-left:1px solid #333;border-top:1px solid #333}.feature{padding:18px;border-right:1px solid #333;border-bottom:1px solid #333;min-height:100px}.tick{color:var(--orange);font-weight:900}.feature strong{display:block;font-size:12px;margin:5px 0}.feature small{color:#888}.hospitality-grid,.why-grid{display:grid;grid-template-columns:.9fr 1.1fr;gap:52px;align-items:center}.hospitality-copy,.why-copy{color:var(--grey);margin:18px 0 24px}.system-map{display:grid;grid-template-columns:1fr 1fr;gap:10px}.system-node{background:#fff;border:1px solid var(--line);padding:19px;min-height:115px}.system-node strong{display:block;color:var(--orange);font-size:23px}.system-node b{font-size:10px;letter-spacing:1px;text-transform:uppercase}.system-node p{font-size:11px;color:#777;margin-top:6px}.proof{border-top:1px solid var(--line)}.proof-row{display:grid;grid-template-columns:45px 1fr;gap:14px;padding:17px 0;border-bottom:1px solid var(--line)}.proof-no{font-size:9px;color:#777}.proof h3{font-size:17px}.proof p{font-size:12px;color:#777}
 .portfolio .section-intro{color:#999}.project-stage{display:grid;grid-template-columns:1.15fr .85fr;border:1px solid #2c2c2c;min-height:410px}.project-photo{position:relative;overflow:hidden}.project-photo img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(1.12) contrast(.82)}.project-info{padding:37px;display:flex;flex-direction:column;justify-content:center}.project-badge{align-self:flex-start;background:var(--orange);color:#111;padding:6px 8px;font-size:8px;font-weight:900;letter-spacing:1px;text-transform:uppercase}.project-info h3{font-size:36px;line-height:1;margin:17px 0 12px}.project-info p{color:#999;font-size:13px;margin-bottom:20px}.project-list{list-style:none;border-top:1px solid #333}.project-list li{display:flex;justify-content:space-between;padding:10px 0;border-bottom:1px solid #333;font-size:9px;font-weight:900;letter-spacing:.9px;text-transform:uppercase}.project-list li:after{content:"✓";color:var(--orange)}
 .steps{display:grid;grid-template-columns:repeat(4,1fr);border-left:1px solid var(--line);border-top:1px solid var(--line)}.step{background:#fff;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:22px;min-height:160px}.step span{font-size:9px;color:#777}.step h3{font-size:20px;margin:24px 0 6px}.step p{font-size:12px;color:#777}form{display:grid;grid-template-columns:1fr 1fr;gap:15px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}label{font-size:8px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase;color:#aaa}input,select,textarea{width:100%;border:1px solid #3b3b3b;background:#161616;color:#fff;padding:13px;outline:none}input:focus,select:focus,textarea:focus{border-color:var(--orange)}textarea{min-height:110px;resize:vertical}.direct,.form-message{color:var(--orange)}.form-note,.form-message{grid-column:1/-1;font-size:10px}.form-note{color:#777}footer{background:#000;color:#777;border-top:1px solid #222;padding:22px 0}.footer-inner{display:flex;justify-content:space-between;gap:15px;font-size:9px;letter-spacing:.9px;text-transform:uppercase}.floating-cta{position:fixed;right:17px;bottom:17px;z-index:45;background:var(--orange);border:1px solid #111;padding:12px 14px;font-size:9px;font-weight:900;letter-spacing:1.1px;text-transform:uppercase}.reveal{opacity:0;transform:translateY(18px);transition:.6s}.reveal.visible{opacity:1;transform:none}.rotating-word{display:inline-block;min-width:8ch;transition:.2s}.rotating-word.swap{opacity:0;transform:translateY(10px)}
-@media(max-width:900px){.navlinks{position:fixed;inset:66px 0 auto;background:#fff;display:none;flex-direction:column;align-items:flex-start;padding:28px 5%;border-bottom:1px solid #ddd}.navlinks.open{display:flex}.menu-btn{display:block}.hero-inner{grid-template-columns:1fr;min-height:auto;padding:44px 0 38px;gap:28px}.hero-panel{max-width:590px}.gallery-grid{grid-template-columns:1.3fr 1fr;height:auto}.gallery figure{height:205px}.gallery figure:last-child{grid-column:1/-1}.service-grid{grid-template-columns:1fr 1fr}.booking-grid,.contact-grid,.hospitality-grid,.why-grid,.project-stage{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.need-inner{align-items:flex-start;flex-direction:column}.need-options{justify-content:flex-start}}
+@media(max-width:900px){.navlinks{position:fixed;inset:66px 0 auto;background:#fff;display:none;flex-direction:column;align-items:flex-start;padding:28px 5%;border-bottom:1px solid #ddd}.navlinks.open{display:flex}.navlinks a{padding:4px 0}.navlinks a.active:after{bottom:-6px}.menu-btn{display:block}.hero-inner{grid-template-columns:1fr;min-height:auto;padding:44px 0 38px;gap:28px}.hero-panel{max-width:590px}.gallery-grid{grid-template-columns:1.3fr 1fr;height:auto}.gallery figure{height:205px}.gallery figure:last-child{grid-column:1/-1}.service-grid{grid-template-columns:1fr 1fr}.booking-grid,.contact-grid,.hospitality-grid,.why-grid,.project-stage{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.need-inner{align-items:flex-start;flex-direction:column}.need-options{justify-content:flex-start}}
 @media(max-width:620px){.brand-name{display:none}.hero h1{font-size:49px;letter-spacing:-3px}.hero-panel-image{height:180px}.gallery-grid{grid-template-columns:1fr 1fr}.gallery figure{height:165px}.gallery .gallery-large{grid-column:1/-1;height:205px}.gallery figure:last-child{grid-column:auto}.cap-grid{grid-template-columns:1fr 1fr}.service-grid,.feature-grid,.steps,.system-map{grid-template-columns:1fr}.service{min-height:auto}section{padding:49px 0}.section-top{display:block}.section-intro{margin-top:16px}form{grid-template-columns:1fr}.field{grid-column:1/-1}.footer-inner{flex-direction:column}.floating-cta{right:10px;bottom:10px}.rotating-word{min-width:0}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}}
+
+/* Clean LOS service band */
+.los-offer{padding:66px 0;background:#eeeeeb;border-bottom:1px solid var(--line)}
+.offer-heading{display:flex;align-items:end;justify-content:space-between;gap:36px;margin-bottom:30px}
+.offer-heading h2{font-size:clamp(36px,5vw,64px);line-height:.94;letter-spacing:-3.5px;max-width:760px;margin-top:13px}
+.offer-heading>p{max-width:370px;color:var(--grey);font-size:14px}
+.offer-grid{display:grid;grid-template-columns:repeat(4,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.offer-card{position:relative;background:#fff;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:24px;min-height:270px;display:flex;flex-direction:column;transition:.25s}
+.offer-card:hover{transform:translateY(-5px);box-shadow:0 18px 38px rgba(0,0,0,.09);z-index:2}
+.offer-card.featured{background:#151515;color:#fff}
+.offer-card.featured p{color:#aaa}
+.offer-card.featured .offer-icon{border-color:#555;background:#202020}
+.offer-card.featured .offer-icon svg{stroke:#fff}
+.offer-icon{width:46px;height:46px;border:1px solid #d0d0cb;border-radius:50%;display:grid;place-items:center;background:#fafaf8;margin-bottom:24px;transition:.25s}
+.offer-icon svg{width:21px;height:21px;fill:none;stroke:#171717;stroke-width:1.65;stroke-linecap:round;stroke-linejoin:round}
+.offer-card:hover .offer-icon{background:var(--orange);border-color:var(--orange)}
+.offer-card:hover .offer-icon svg{stroke:#111}
+.offer-no{position:absolute;right:22px;top:25px;color:var(--orange);font-size:9px;font-weight:900;letter-spacing:1px}
+.offer-card h3{font-size:21px;margin-bottom:10px}
+.offer-card p{font-size:12px;color:#707070;line-height:1.55;margin-bottom:22px}
+.offer-card a{margin-top:auto;padding-top:15px;border-top:1px solid rgba(120,120,120,.3);font-size:8px;font-weight:900;letter-spacing:1px;text-transform:uppercase;display:flex;justify-content:space-between;align-items:center}
+.offer-card a b{color:var(--orange);font-size:15px}
+@media(max-width:900px){.offer-grid{grid-template-columns:1fr 1fr}.offer-heading{align-items:flex-start;flex-direction:column}}
+@media(max-width:620px){.los-offer{padding:49px 0}.offer-grid{grid-template-columns:1fr}.offer-heading{margin-bottom:24px}.offer-card{min-height:235px}}
+
+
+/* Simplified three-row services */
+.services-lite{background:#f3f3f0}
+.service-rows{border-top:1px solid var(--line)}
+.service-row{position:relative;display:grid;grid-template-columns:42px 58px minmax(0,1fr) auto;gap:20px;align-items:center;padding:27px 0;border-bottom:1px solid var(--line)}
+.row-no{align-self:start;padding-top:8px;font-size:9px;font-weight:900;letter-spacing:1px;color:#888}
+.row-icon{width:48px;height:48px;border:1px solid #cdcdc8;border-radius:50%;display:grid;place-items:center;background:#fff}
+.row-icon svg{width:21px;height:21px;fill:none;stroke:#171717;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.row-copy{max-width:650px}.row-copy>span{display:block;margin-bottom:6px;font-size:8px;font-weight:900;letter-spacing:1.6px;text-transform:uppercase;color:var(--orange)}
+.row-copy h3{font-size:clamp(24px,3vw,38px);line-height:1;letter-spacing:-1.5px;margin-bottom:8px}.row-copy p{max-width:600px;color:#707070;font-size:12px}
+.row-link{min-width:175px;display:flex;justify-content:space-between;gap:18px;align-items:center;padding:12px 0;border-bottom:1px solid #aaa;font-size:8px;font-weight:900;letter-spacing:1px;text-transform:uppercase}.row-link b{font-size:15px;color:var(--orange)}
+.hospitality-row{grid-template-columns:42px 58px minmax(0,1fr) 190px auto}.hospitality-row:before{content:"";position:absolute;left:0;top:-1px;bottom:-1px;width:3px;background:var(--orange)}
+.row-image{height:104px;overflow:hidden;background:#ddd}.row-image img{width:100%;height:100%;object-fit:cover;filter:grayscale(1) brightness(1.15) contrast(.82);display:block}
+.floating-cta{padding:10px 12px;font-size:8px;opacity:.92}
+@media(max-width:900px){.service-row,.hospitality-row{grid-template-columns:42px 58px 1fr}.row-link{grid-column:3;justify-self:start}.row-image{grid-column:3;width:min(100%,380px);height:120px}}
+@media(max-width:620px){.service-row,.hospitality-row{grid-template-columns:42px 1fr;gap:14px;padding:23px 0}.row-no{grid-row:1}.row-icon{grid-column:2;width:43px;height:43px}.row-copy,.row-link,.row-image{grid-column:2}.row-copy h3{font-size:27px}.row-link{min-width:0;width:100%;max-width:240px}.floating-cta{display:none}}
+
+
+/* Compact selected capability */
+.portfolio-compact{padding:54px 0;background:#111;color:#fff}
+.featured-strip{display:grid;grid-template-columns:.85fr 1.15fr;min-height:355px;border:1px solid #303030;background:#151515}
+.featured-image{min-height:355px;overflow:hidden;background:#d7d7d3}
+.featured-image img{width:100%;height:100%;object-fit:cover;display:block;filter:grayscale(1) brightness(1.18) contrast(.82)}
+.featured-copy{padding:38px 44px;display:flex;flex-direction:column;justify-content:center}
+.featured-copy .eyebrow{color:#ddd;margin-bottom:18px}
+.featured-kicker{align-self:flex-start;background:var(--orange);color:#111;padding:6px 8px;font-size:8px;font-weight:900;letter-spacing:1px;text-transform:uppercase;margin-bottom:14px}
+.featured-copy h2{font-size:clamp(39px,4.4vw,58px);line-height:.92;letter-spacing:-3px;margin:0 0 14px;max-width:600px}
+.featured-copy p{max-width:560px;color:#aaa;font-size:13px;line-height:1.55}
+.featured-tags{display:flex;gap:7px;flex-wrap:wrap;margin:19px 0}
+.featured-tags span{border:1px solid #444;padding:7px 9px;font-size:8px;font-weight:900;letter-spacing:.8px;text-transform:uppercase;color:#d5d5d5}
+.featured-link{width:min(100%,245px);display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #555;font-size:8px;font-weight:900;letter-spacing:1px;text-transform:uppercase}
+.featured-link b{font-size:15px;color:var(--orange)}
+@media(max-width:900px){.featured-strip{grid-template-columns:1fr;min-height:0}.featured-image{min-height:280px;max-height:340px}.featured-copy{padding:34px}}
+@media(max-width:620px){.portfolio-compact{padding:42px 0}.featured-image{min-height:220px}.featured-copy{padding:25px}.featured-copy h2{font-size:38px;letter-spacing:-2px}.featured-tags{margin:16px 0}}
+
+
+/* Website design and redesign */
+.website-focus{padding:64px 0;background:#eeeef0}
+.website-focus-grid{display:grid;grid-template-columns:.72fr 1.28fr;gap:46px;align-items:stretch}
+.website-photo{position:relative;min-height:500px;overflow:hidden;background:#d3d3cf}
+.website-photo:after{content:"";position:absolute;inset:0;background:linear-gradient(to top,rgba(0,0,0,.55),transparent 52%)}
+.website-photo img{width:100%;height:100%;display:block;object-fit:cover;filter:grayscale(1) brightness(1.15) contrast(.8)}
+.website-photo>span{position:absolute;z-index:2;left:18px;bottom:17px;color:#fff;font-size:8px;font-weight:900;letter-spacing:1.2px;text-transform:uppercase}
+.website-content{display:flex;flex-direction:column;justify-content:center}
+.website-content h2{font-size:clamp(40px,5vw,66px);line-height:.91;letter-spacing:-4px;margin:14px 0 17px}
+.website-lead{max-width:700px;color:#686868;font-size:14px;line-height:1.6;margin-bottom:24px}
+.website-options{display:grid;grid-template-columns:1fr 1fr;border-left:1px solid var(--line);border-top:1px solid var(--line)}
+.website-option{background:#fff;border-right:1px solid var(--line);border-bottom:1px solid var(--line);padding:21px;min-height:260px;display:flex;flex-direction:column}
+.website-option.dark-option{background:#171717;color:#fff;border-color:#333}.dark-option p{color:#aaa!important}.dark-option .option-icon{border-color:#555;background:#202020}.dark-option .option-icon svg{stroke:#fff}
+.option-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:18px}.option-head>span{color:var(--orange);font-size:10px;font-weight:900;letter-spacing:1px}.option-icon{width:42px;height:42px;border:1px solid #d2d2cd;border-radius:50%;display:grid;place-items:center}.option-icon svg{width:19px;height:19px;fill:none;stroke:#171717;stroke-width:1.6;stroke-linecap:round;stroke-linejoin:round}
+.website-option h3{font-size:21px;margin-bottom:7px}.website-option p{font-size:11px;color:#777;line-height:1.5}.option-points{display:flex;flex-wrap:wrap;gap:5px;margin:16px 0}.option-points span{border:1px solid rgba(130,130,130,.45);padding:5px 7px;font-size:7px;font-weight:900;letter-spacing:.7px;text-transform:uppercase}.website-option a{margin-top:auto;display:flex;justify-content:space-between;align-items:center;padding-top:11px;border-top:1px solid rgba(130,130,130,.35);font-size:8px;font-weight:900;letter-spacing:.9px;text-transform:uppercase}.website-option a b{color:var(--orange);font-size:14px}
+.website-note{margin-top:14px;padding-left:14px;border-left:3px solid var(--orange);font-size:11px;color:#777}.website-note b{color:#111}
+@media(max-width:900px){.website-focus-grid{grid-template-columns:1fr}.website-photo{min-height:300px;max-height:380px}.website-content h2{letter-spacing:-3px}}
+@media(max-width:620px){.website-focus{padding:49px 0}.website-options{grid-template-columns:1fr}.website-photo{min-height:230px}.website-content h2{font-size:40px;letter-spacing:-2.5px}.website-option{min-height:230px}}
+
+
+/* Menu design and refresh */
+.menu-design{padding:64px 0;background:#fff}
+.menu-design-grid{display:grid;grid-template-columns:.92fr 1.08fr;gap:54px;align-items:center}
+.menu-copy h2{font-size:clamp(40px,5vw,66px);line-height:.91;letter-spacing:-4px;margin:14px 0 17px;max-width:690px}.menu-lead{max-width:650px;color:#707070;font-size:14px;line-height:1.6;margin-bottom:22px}
+.menu-services{border-top:1px solid var(--line);margin-bottom:17px}.menu-services article{display:grid;grid-template-columns:38px 1fr;gap:12px;padding:13px 0;border-bottom:1px solid var(--line)}.menu-services article>span{color:var(--orange);font-size:9px;font-weight:900;padding-top:4px}.menu-services h3{font-size:16px;margin-bottom:3px}.menu-services p{font-size:11px;color:#777;line-height:1.45}
+.menu-chip-row{display:flex;flex-wrap:wrap;gap:5px;margin:0 0 18px}.menu-chip-row span{border:1px solid #d0d0cb;padding:6px 8px;font-size:7px;font-weight:900;letter-spacing:.7px;text-transform:uppercase;color:#666}
+.menu-before-after{display:grid;grid-template-columns:1fr 34px 1fr;align-items:center;min-height:520px;padding:26px;background:#ecece9;border:1px solid var(--line)}.menu-sheet{position:relative;min-height:450px;padding:27px 24px;background:#fff;box-shadow:0 18px 38px rgba(0,0,0,.11)}.sheet-label{position:absolute;top:12px;right:12px;font-size:7px;font-weight:900;letter-spacing:1px;text-transform:uppercase;color:#888}.menu-arrow{text-align:center;color:var(--orange);font-size:25px;font-weight:900}
+.old-menu{font-family:"Courier New",monospace;background:#f4f1e9;color:#292929;border:5px double #494949;transform:rotate(-1.2deg)}.old-title{text-align:center;font-size:19px;font-weight:900;margin:24px 0 5px;letter-spacing:1px}.old-rule{height:3px;background:#333;margin:8px 0 20px}.old-menu h4{font-size:11px;margin:18px 0 7px;text-decoration:underline}.old-menu p{font-size:8px;line-height:1.8;white-space:nowrap}
+.new-menu{background:#fbfbf8;color:#161616;transform:rotate(1.1deg);border-top:5px solid var(--orange)}.new-mark{width:32px;height:32px;border-radius:50%;display:grid;place-items:center;background:#111;color:#fff;margin-top:4px;font-size:13px;font-weight:900}.new-title{font-size:29px;font-weight:900;letter-spacing:-1px;margin-top:21px}.new-sub{font-size:8px;color:var(--orange);font-weight:900;letter-spacing:1.3px;text-transform:uppercase;margin-bottom:20px}.new-section{padding:13px 0;border-top:1px solid #d9d9d4}.new-section h4{font-size:9px;text-transform:uppercase;letter-spacing:1px;margin-bottom:10px}.new-section div{display:flex;justify-content:space-between;gap:12px;font-size:9px;margin-top:8px}.new-section small{display:block;color:#888;font-size:7px;margin-top:2px}.new-footer{position:absolute;bottom:20px;left:24px;right:24px;font-size:7px;color:#888;text-transform:uppercase;letter-spacing:1px}
+@media(max-width:900px){.menu-design-grid{grid-template-columns:1fr}.menu-before-after{max-width:720px;margin:auto;width:100%}}
+@media(max-width:620px){.menu-design{padding:49px 0}.menu-copy h2{font-size:40px;letter-spacing:-2.5px}.menu-before-after{grid-template-columns:1fr;padding:17px;gap:12px}.menu-arrow{transform:rotate(90deg)}.menu-sheet{min-height:420px}.old-menu,.new-menu{transform:none}}
+
+
+/* FINAL COMPACT OVERRIDES: Booking + Menu sections */
+.booking{padding:48px 0}
+.booking-grid{grid-template-columns:.78fr 1.22fr;gap:38px;align-items:center}
+.booking h2{font-size:clamp(38px,4.4vw,58px);line-height:.9;letter-spacing:-3px;margin:12px 0 17px;max-width:480px}
+.booking-copy{font-size:13px;line-height:1.55;margin:0 0 19px;max-width:470px}
+.booking .btn{min-height:45px;padding:0 19px}
+.feature-grid{grid-template-columns:repeat(3,1fr)}
+.feature{padding:14px 15px;min-height:96px}
+.feature .tick{margin-bottom:5px}
+.feature strong{font-size:11px;margin:3px 0 4px}
+.feature small{font-size:10px;line-height:1.35}
+
+.menu-design{padding:46px 0}
+.menu-design-grid{grid-template-columns:.9fr 1.1fr;gap:38px;align-items:center}
+.menu-copy h2{font-size:clamp(36px,4.2vw,54px);line-height:.92;letter-spacing:-3px;margin:11px 0 13px;max-width:560px}
+.menu-lead{font-size:12px;line-height:1.55;margin-bottom:15px;max-width:560px}
+.menu-services{margin-bottom:12px}
+.menu-services article{grid-template-columns:31px 1fr;gap:9px;padding:9px 0}
+.menu-services h3{font-size:14px;margin-bottom:2px}
+.menu-services p{font-size:10px;line-height:1.35}
+.menu-chip-row{margin-bottom:13px}
+.menu-chip-row span{padding:5px 6px;font-size:6.5px}
+.menu-copy .btn{min-height:43px;padding:0 18px}
+.menu-before-after{min-height:390px;padding:18px;grid-template-columns:1fr 28px 1fr}
+.menu-sheet{min-height:350px;padding:22px 18px}
+.old-title{font-size:15px;margin:21px 0 4px}.old-rule{margin:7px 0 13px}.old-menu h4{font-size:9px;margin:12px 0 5px}.old-menu p{font-size:6px;line-height:1.65}
+.new-mark{width:27px;height:27px;font-size:11px}.new-title{font-size:23px;margin-top:16px}.new-sub{font-size:6.5px;margin-bottom:13px}.new-section{padding:9px 0}.new-section h4{font-size:7px;margin-bottom:6px}.new-section div{font-size:7px;margin-top:5px}.new-section small{font-size:5.5px}.new-footer{bottom:14px;left:18px;right:18px;font-size:5.5px}
+.sheet-label{font-size:5.5px;top:9px;right:9px}
+.menu-arrow{font-size:20px}
+@media(max-width:900px){.booking-grid{grid-template-columns:1fr;gap:27px}.feature-grid{grid-template-columns:repeat(3,1fr)}.menu-design-grid{gap:27px}.menu-before-after{min-height:360px;max-width:650px}.menu-sheet{min-height:330px}}
+@media(max-width:620px){.booking{padding:39px 0}.booking h2{font-size:39px}.feature-grid{grid-template-columns:1fr 1fr}.feature{min-height:88px}.menu-design{padding:39px 0}.menu-copy h2{font-size:37px}.menu-before-after{grid-template-columns:1fr;min-height:0}.menu-sheet{min-height:330px}.menu-arrow{transform:rotate(90deg)}}
+
 </style>
 </head>
 <body>
 <a class="floating-cta" href="#contact">Start a project ↗</a>
-<header><nav class="container"><a class="brand" href="#top"><span class="brand-mark">LOS</span><span class="brand-name">LOS Design</span></a><button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button><ul class="navlinks"><li><a href="#services">Services</a></li><li><a href="#work">Work</a></li><li><a href="#hospitality">Hospitality</a></li><li><a href="#why">Why LOS</a></li><li><a href="#contact">Start a project</a></li></ul></nav></header>
+<header><nav class="container"><a class="brand" href="#top"><span class="brand-mark">LOS</span><span class="brand-name">LOS Design</span></a><button class="menu-btn" type="button" aria-label="Open menu" aria-expanded="false"><span></span></button><ul class="navlinks"><li><a class="active" href="index.html" aria-current="page">Home</a></li><li><a href="booking-system.html">Booking</a></li><li><a href="#web-design">Web Design</a></li><li><a href="#menu-design">Menu Design</a></li><li><a href="#contact">Contact</a></li></ul></nav></header>
 <main id="top">
 <section class="hero"><div class="container hero-inner"><div><div class="eyebrow">Design · Systems · Growth</div><h1>Design.<br><span class="rotating-word" id="rotatingWord">Websites.</span></h1><p class="hero-copy">Websites, booking systems and practical digital support for independent businesses.</p><div class="hero-actions"><a class="btn accent" href="#contact">Start your project ↗</a><span class="hero-note">Built around your business. Not a template.</span></div></div><aside class="hero-panel"><div class="hero-panel-image"><img src="los-restaurant-interior.jpg" alt="Elegant restaurant interior"><span class="image-label">Hospitality design · LOS</span></div><div class="hero-panel-content"><h2>Design that looks sharp. Systems that work hard.</h2><p>Web design, booking systems and digital support in one place.</p><div class="hero-tags"><span>Mobile first</span><span>Restaurant systems</span><span>Local support</span><span>Built to grow</span></div></div></aside></div></section>
-<div class="gallery"><div class="gallery-grid"><figure class="gallery-large"><img src="los-restaurant-interior.jpg" alt="Stylish restaurant interior"><figcaption><span>01</span>Restaurant websites</figcaption></figure><figure><img src="los-table-setting.jpg" alt="Fine dining table setting"><figcaption><span>02</span>Customer experience</figcaption></figure><figure><img src="los-kitchen.jpg" alt="Italian working kitchen"><figcaption><span>03</span>Hospitality systems</figcaption></figure></div></div>
-<div class="capabilities"><div class="container cap-grid"><div class="cap">Web design</div><div class="cap">Smart bookings</div><div class="cap">SEO</div><div class="cap">Digital support</div></div></div>
-<div class="need-bar"><div class="container need-inner"><div class="need-title">What do you need?</div><div class="need-options"><button type="button" class="need-option" data-service="New website">New website</button><button type="button" class="need-option" data-service="Advanced booking platform">Booking system</button><button type="button" class="need-option" data-service="SEO and Google visibility">SEO help</button><button type="button" class="need-option" data-service="Menu updates or design">Menu design</button><button type="button" class="need-option" data-service="IT and digital support">Digital support</button></div></div></div>
-<section class="services" id="services"><div class="container"><div class="section-top reveal"><div><div class="eyebrow">What LOS Design delivers</div><h2>Everything your business needs online.</h2></div><p class="section-intro">Clear design, useful technology and ongoing support, brought together without unnecessary complexity.</p></div><div class="service-grid">
-<article class="service reveal"><div class="service-head"><span class="service-no">01</span><div class="icon">▣</div></div><h3>Website Design</h3><p>Distinctive responsive websites built to present your business professionally and turn visitors into customers.</p><div class="mini-tags"><span>Design</span><span>Mobile</span><span>Performance</span></div></article>
-<article class="service reveal"><div class="service-head"><span class="service-no">02</span><div class="icon">⌕</div></div><h3>SEO & Visibility</h3><p>Local SEO, page improvements and focused content that help customers discover your business through Google.</p><div class="mini-tags"><span>Local SEO</span><span>Google</span><span>Content</span></div></article>
-<article class="service reveal"><div class="service-head"><span class="service-no">03</span><div class="icon">▦</div></div><h3>Booking Platforms</h3><p>Advanced restaurant reservations with live availability, smart table allocation, confirmations and staff controls.</p><div class="mini-tags"><span>Live</span><span>Smart tables</span><span>Management</span></div></article>
-<article class="service reveal"><div class="service-head"><span class="service-no">04</span><div class="icon">◇</div></div><h3>Gift Vouchers</h3><p>Online voucher sales and custom digital tools designed around how your business actually operates.</p><div class="mini-tags"><span>Online sales</span><span>Admin tools</span><span>Custom code</span></div></article>
-<article class="service reveal"><div class="service-head"><span class="service-no">05</span><div class="icon">▤</div></div><h3>Menus, Print & Design</h3><p>Menu updates, price changes, seasonal launches, posters, promotions and polished print-ready artwork.</p><div class="mini-tags"><span>Menus</span><span>Print</span><span>Promotions</span></div></article>
-<article class="service reveal"><div class="service-head"><span class="service-no">06</span><div class="icon">⚙</div></div><h3>IT & Digital Support</h3><p>Practical help with domains, business email, devices, website changes and everyday technology problems.</p><div class="mini-tags"><span>Email</span><span>Domains</span><span>IT help</span></div></article>
-</div></div></section>
-<section class="portfolio" id="work"><div class="container"><div class="section-top reveal"><div><div class="eyebrow">Selected capability</div><h2>Designed to look good. Built to do more.</h2></div><p class="section-intro">A strong visual direction for hospitality businesses that need design and serious functionality together.</p></div><div class="project-stage reveal"><div class="project-photo"><img src="los-table-setting.jpg" alt="Premium restaurant table setting"></div><div class="project-info"><span class="project-badge">Featured direction</span><h3>Hospitality, made digital.</h3><p>A complete customer and staff experience, from the first Google search to booking, arrival and restaurant management.</p><ul class="project-list"><li>Premium responsive website</li><li>Advanced booking technology</li><li>Search visibility and SEO</li><li>Menus, vouchers and print</li></ul></div></div></div></section>
-<section class="hospitality" id="hospitality"><div class="container hospitality-grid"><div class="reveal"><div class="eyebrow">Built for hospitality</div><h2>One connected restaurant experience.</h2><p class="hospitality-copy">A restaurant website should help customers discover the venue, make a booking, receive confirmation and arrive with confidence, while giving staff practical tools behind the scenes.</p><a class="btn" href="#contact" data-service="Advanced booking platform">Build my restaurant system ↗</a></div><div class="system-map reveal"><div class="system-node"><strong>01</strong><b>Discover</b><p>Fast pages, clear menus and local Google visibility.</p></div><div class="system-node"><strong>02</strong><b>Book</b><p>Live availability, cover rules and alternative times.</p></div><div class="system-node"><strong>03</strong><b>Allocate</b><p>Smart tables, combinations and occupancy controls.</p></div><div class="system-node"><strong>04</strong><b>Manage</b><p>Confirmations, staff controls, check-in and check-out.</p></div></div></div></section>
+<section class="los-offer" aria-label="LOS Design services">
+  <div class="container">
+    <div class="offer-heading reveal">
+      <div>
+        <div class="eyebrow">What LOS Design does</div>
+        <h2>Design, systems and support. All connected.</h2>
+      </div>
+      <p>Practical digital services for restaurants and independent businesses, without the unnecessary complexity.</p>
+    </div>
+    <div class="offer-grid">
+      <article class="offer-card reveal">
+        <div class="offer-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="15" rx="1"/><path d="M3 8h18M8 22h8M12 19v3"/></svg></div>
+        <span class="offer-no">01</span>
+        <h3>Web Design</h3>
+        <p>Polished, responsive websites shaped around the business, its customers and its goals.</p>
+        <a href="#services">Explore web design <b>↗</b></a>
+      </article>
+      <article class="offer-card featured reveal">
+        <div class="offer-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M7 3v4M17 3v4M3 10h18M8 14h3M13 14h3M8 18h3"/></svg></div>
+        <span class="offer-no">02</span>
+        <h3>Smart Booking</h3>
+        <p>Live availability, intelligent table allocation, venue controls and one connected booking diary.</p>
+        <a href="booking-system.html">Explore booking platform <b>↗</b></a>
+      </article>
+      <article class="offer-card reveal">
+        <div class="offer-icon"><svg viewBox="0 0 24 24"><path d="M6 3h12v18H6zM9 7h6M9 11h6M9 15h4"/><path d="m16 16 3 3"/></svg></div>
+        <span class="offer-no">03</span>
+        <h3>Menu & Print</h3>
+        <p>Menu updates, seasonal launches, promotions and clean print-ready artwork.</p>
+        <a href="#services">Explore menu design <b>↗</b></a>
+      </article>
+      <article class="offer-card reveal">
+        <div class="offer-icon"><svg viewBox="0 0 24 24"><circle cx="10" cy="10" r="6"/><path d="m15 15 5 5M7 10h6M10 7v6"/></svg></div>
+        <span class="offer-no">04</span>
+        <h3>SEO & Digital</h3>
+        <p>Google visibility, website improvements and ongoing help with everyday digital needs.</p>
+        <a href="#contact">Discuss your project <b>↗</b></a>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="services services-lite" id="services">
+  <div class="container">
+    <div class="section-top reveal">
+      <div><div class="eyebrow">How LOS can help</div><h2>Three areas. One practical partner.</h2></div>
+      <p class="section-intro">From the first idea to the systems and support behind it, LOS keeps the digital side of the business connected.</p>
+    </div>
+    <div class="service-rows">
+      <article class="service-row reveal">
+        <div class="row-no">01</div>
+        <div class="row-icon"><svg viewBox="0 0 24 24"><rect x="3" y="4" width="18" height="15" rx="1"/><path d="M3 8h18M8 22h8M12 19v3"/></svg></div>
+        <div class="row-copy"><span>Design</span><h3>Websites that look like your business.</h3><p>Responsive websites, redesigns, landing pages, menu design and polished print-ready artwork.</p></div>
+        <a class="row-link" href="#work">Explore design <b>↗</b></a>
+      </article>
+      <article class="service-row hospitality-row reveal">
+        <div class="row-no">02</div>
+        <div class="row-icon"><svg viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="1"/><path d="M7 3v4M17 3v4M3 10h18M8 14h3M13 14h3M8 18h3"/></svg></div>
+        <div class="row-copy"><span>Hospitality</span><h3>Technology built around the restaurant.</h3><p>Smart bookings, table allocation, venue management, gift vouchers and the customer journey after service.</p></div>
+        <div class="row-image"><img src="los-kitchen.jpg" alt="Restaurant kitchen"></div>
+        <a class="row-link" href="booking-system.html">Explore Smart Booking <b>↗</b></a>
+      </article>
+      <article class="service-row reveal">
+        <div class="row-no">03</div>
+        <div class="row-icon"><svg viewBox="0 0 24 24"><path d="M4 18V6M4 18h16M8 15l3-4 3 2 5-6"/><path d="M16 7h3v3"/></svg></div>
+        <div class="row-copy"><span>Support</span><h3>The things businesses need after launch.</h3><p>SEO, Google visibility, content updates, domains, business email and practical ongoing digital support.</p></div>
+        <a class="row-link" href="#contact">Discuss support <b>↗</b></a>
+      </article>
+    </div>
+  </div>
+</section>
+<section class="portfolio portfolio-compact" id="work">
+  <div class="container">
+    <div class="featured-strip reveal">
+      <div class="featured-image">
+        <img src="los-table-setting.jpg" alt="Elegant restaurant table setting">
+      </div>
+      <div class="featured-copy">
+        <div class="eyebrow">Selected capability</div>
+        <span class="featured-kicker">Hospitality · Digital</span>
+        <h2>Hospitality, made digital.</h2>
+        <p>Web design, smart bookings and practical restaurant technology brought together in one connected experience.</p>
+        <div class="featured-tags"><span>Web Design</span><span>Smart Booking</span><span>SEO</span></div>
+        <a class="featured-link" href="booking-system.html">Explore booking platform <b>↗</b></a>
+      </div>
+    </div>
+  </div>
+</section>
+<section class="website-focus" id="web-design">
+  <div class="container website-focus-grid">
+    <div class="website-photo reveal">
+      <img src="los-restaurant-interior.jpg" alt="Elegant restaurant interior">
+      <span>Website Design · LOS</span>
+    </div>
+    <div class="website-content reveal">
+      <div class="eyebrow">Website design & redesign</div>
+      <h2>Already have a website?<br>Let's make it better.</h2>
+      <p class="website-lead">Not every business needs to start again. LOS can improve what already works, fix what doesn't, or build something completely new when a fresh start makes more sense.</p>
+      <div class="website-options">
+        <article class="website-option">
+          <div class="option-head"><span>01</span><div class="option-icon"><svg viewBox="0 0 24 24"><path d="M4 18V6h16v12H4zM7 9h10M7 12h7M7 15h5"/><path d="m16 17 4-4M17 13h3v3"/></svg></div></div>
+          <h3>Redesign my website</h3>
+          <p>For an existing website that feels dated, slow or difficult to use.</p>
+          <div class="option-points"><span>Modern design</span><span>Mobile layout</span><span>Speed & SEO</span><span>Content updates</span></div>
+          <a href="#contact">Discuss a redesign <b>↗</b></a>
+        </article>
+        <article class="website-option dark-option">
+          <div class="option-head"><span>02</span><div class="option-icon"><svg viewBox="0 0 24 24"><path d="M12 4v16M4 12h16"/><rect x="3" y="3" width="18" height="18" rx="1"/></svg></div></div>
+          <h3>Build something new</h3>
+          <p>For a new business, new brand or a website that needs a completely fresh start.</p>
+          <div class="option-points"><span>Responsive build</span><span>Enquiry forms</span><span>Bookings</span><span>Google-ready</span></div>
+          <a href="#contact">Start a new website <b>↗</b></a>
+        </article>
+      </div>
+      <p class="website-note"><b>Already have something that works?</b> We don't rebuild for the sake of it. LOS can improve the parts that genuinely need attention.</p>
+    </div>
+  </div>
+</section>
 <section class="booking"><div class="container booking-grid"><div class="reveal"><div class="eyebrow">The standout service</div><h2>Smarter restaurant bookings.</h2><p class="booking-copy">Give customers live availability while giving your team the controls needed to manage tables, reservations and service confidently.</p><a class="btn light" href="#contact">Discuss your system ↗</a></div><div class="feature-grid reveal"><div class="feature"><div class="tick">✓</div><strong>Live availability</strong><small>Genuine booking times based on capacity.</small></div><div class="feature"><div class="tick">✓</div><strong>Smart table allocation</strong><small>Suitable tables and combinations.</small></div><div class="feature"><div class="tick">✓</div><strong>Email confirmations</strong><small>Keep customers informed automatically.</small></div><div class="feature"><div class="tick">✓</div><strong>Booking management</strong><small>View and update reservations clearly.</small></div><div class="feature"><div class="tick">✓</div><strong>Check-in & check-out</strong><small>Support the real flow of service.</small></div><div class="feature"><div class="tick">✓</div><strong>Custom development</strong><small>Features built around your operation.</small></div></div></div></section>
-<section class="why" id="why"><div class="container why-grid"><div class="reveal"><div class="eyebrow">Why LOS Design?</div><h2>Not another template.</h2><p class="why-copy">LOS Design combines visual design, technical development and practical support in one focused service.</p></div><div class="proof reveal"><div class="proof-row"><span class="proof-no">01</span><div><h3>Design with purpose</h3><p>Distinctive work shaped around your brand and customers.</p></div></div><div class="proof-row"><span class="proof-no">02</span><div><h3>Systems that solve problems</h3><p>Useful tools built around real operational needs.</p></div></div><div class="proof-row"><span class="proof-no">03</span><div><h3>Direct practical support</h3><p>One service that understands the design, code and business need.</p></div></div><div class="proof-row"><span class="proof-no">04</span><div><h3>Room to grow</h3><p>Develop the platform as the business grows.</p></div></div></div></div></section>
+<section class="menu-design" id="menu-design">
+  <div class="container menu-design-grid">
+    <div class="menu-copy reveal">
+      <div class="eyebrow">Menu design & refresh</div>
+      <h2>Are your menus starting to look a little tired?</h2>
+      <p class="menu-lead">Changing prices, adding dishes, removing items or simply ready for a cleaner look? LOS can update what you already have or redesign the menu from the ground up.</p>
+      <div class="menu-services">
+        <article><span>01</span><div><h3>Refresh</h3><p>Keep the existing style, but improve spacing, typography, hierarchy and presentation.</p></div></article>
+        <article><span>02</span><div><h3>Update</h3><p>Change prices, add or remove dishes, update descriptions and prepare seasonal launches.</p></div></article>
+        <article><span>03</span><div><h3>Redesign</h3><p>Create a cleaner modern layout ready for your website, social media and professional printing.</p></div></article>
+      </div>
+      <div class="menu-chip-row"><span>Price changes</span><span>New dishes</span><span>Seasonal menus</span><span>Drinks menus</span><span>Print-ready</span></div>
+      <a class="btn" href="#contact">Refresh my menu ↗</a>
+    </div>
+    <div class="menu-before-after reveal" aria-label="Example of a menu before and after redesign">
+      <div class="menu-sheet old-menu">
+        <div class="sheet-label">Before</div>
+        <div class="old-title">RESTAURANT MENU</div>
+        <div class="old-rule"></div>
+        <h4>STARTERS</h4>
+        <p>GARLIC BREAD........................ 6.50</p><p>SOUP OF THE DAY................ 7.50</p><p>CALAMARI............................ 10.95</p>
+        <h4>MAIN COURSES</h4>
+        <p>CHICKEN & FRIES.................. 17.95</p><p>PASTA SPECIAL..................... 18.50</p><p>FISH OF THE DAY................. 21.95</p>
+        <h4>DESSERTS</h4><p>CHEESECAKE........................ 7.95</p><p>ICE CREAM............................ 6.95</p>
+      </div>
+      <div class="menu-arrow">→</div>
+      <div class="menu-sheet new-menu">
+        <div class="sheet-label">After · LOS Design</div>
+        <div class="new-mark">L</div>
+        <div class="new-title">DINNER</div><div class="new-sub">Seasonal menu</div>
+        <div class="new-section"><h4>To begin</h4><div><b>Calamari</b><span>10.95</span></div><small>Lemon · parsley · garlic</small><div><b>Garlic focaccia</b><span>6.50</span></div><small>Rosemary · sea salt</small></div>
+        <div class="new-section"><h4>From the kitchen</h4><div><b>House pasta</b><span>18.50</span></div><small>Seasonal ingredients · parmesan</small><div><b>Market fish</b><span>21.95</span></div><small>Herbs · lemon · greens</small></div>
+        <div class="new-footer">Thoughtful food · simply presented</div>
+      </div>
+    </div>
+  </div>
+</section>
 <section class="process"><div class="container"><div class="section-top reveal"><div><div class="eyebrow">Simple process</div><h2>From idea to live.</h2></div><p class="section-intro">A clear route from the first conversation to a polished working result.</p></div><div class="steps"><div class="step reveal"><span>01</span><h3>Discover</h3><p>Understand the business, audience, problems and goals.</p></div><div class="step reveal"><span>02</span><h3>Design</h3><p>Create a focused direction for desktop and mobile.</p></div><div class="step reveal"><span>03</span><h3>Build</h3><p>Develop, refine and test the website or system.</p></div><div class="step reveal"><span>04</span><h3>Support</h3><p>Launch confidently, then improve what matters.</p></div></div></div></section>
 <section class="contact" id="contact"><div class="container contact-grid"><div class="reveal"><div class="eyebrow">Start your project</div><h2>Let's build something useful.</h2><p class="contact-copy">Tell me what your business needs help with. Your enquiry opens in your email app, ready to send directly to LOS Design.</p><a class="direct" href="mailto:fatoni.salihu@gmail.com">fatoni.salihu@gmail.com</a></div><form id="enquiryForm" class="reveal" novalidate><div class="field"><label for="name">Your name</label><input id="name" autocomplete="name" required></div><div class="field"><label for="business">Business name</label><input id="business" autocomplete="organization" required></div><div class="field"><label for="email">Email address</label><input id="email" type="email" autocomplete="email" required></div><div class="field"><label for="service">What can I help with?</label><select id="service" required><option value="">Choose a service</option><option>New website</option><option>Website redesign</option><option>Advanced booking platform</option><option>SEO and Google visibility</option><option>Gift voucher system</option><option>Menu updates or design</option><option>Print and promotional design</option><option>IT and digital support</option><option>Custom development</option><option>Something else</option></select></div><div class="field full"><label for="message">Tell me about your project</label><textarea id="message" required></textarea></div><div class="field full"><button class="btn accent" type="submit">Prepare enquiry ↗</button></div><p class="form-note">Submitting opens your email application. No details are stored on this website.</p><p id="formMessage" class="form-message" aria-live="polite"></p></form></div></section>
 </main><footer><div class="container footer-inner"><span>© <span id="year"></span> LOS Design. All rights reserved.</span><span>Websites · Systems · Digital support</span></div></footer>
